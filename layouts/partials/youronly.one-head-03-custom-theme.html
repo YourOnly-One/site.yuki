@@ -1,0 +1,129 @@
+<style>
+  /* BGN: From Semantic UI
+   *   - https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css
+   */
+		pre {
+		  font-family: var(--yuki-font-family), monospace;
+		}
+		code, kbd, samp {
+		  font-family: var(--yuki-font-family), monospace;
+		}
+		button, input, optgroup, select, textarea {
+		  font-family: var(--yuki-font-family), sans-serif;
+		}
+		body {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		h1, h2, h3, h4, h5 {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.button {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.text.container {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.input>input {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.list .list>.item .header, .ui.list>.item .header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.steps .step .title {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url] {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.menu {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.message .header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.card>.content>.header, .ui.cards>.card>.content>.header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.items>.item>.content>.header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.statistic>.value, .ui.statistics .statistic>.value {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.statistic>.label, .ui.statistics .statistic>.label {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.accordion .title:not(.ui) {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.modal>.header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.popup>.header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.search>.results .result .title {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.search>.results>.message .header {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+		.ui.category.search>.results .category>.name {
+		  font-family: Lato, var(--yuki-font-family), 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		}
+  /* END: From Semantic UI */
+
+  /* BGN: From github-markdown
+   *   - https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css
+   *   - It is overriding our text in the body
+   */
+		.markdown-body {
+		  font-family: "Noto Sans", var(--yuki-font-family), -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+		}
+		.markdown-body code, .markdown-body kbd, .markdown-body pre {
+		  font-family: var(--yuki-font-family), monospace;
+		}
+		.markdown-body code, .markdown-body pre {
+		  font-family: var(--yuki-font-family), SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+		}
+		.markdown-body .commit-tease-sha {
+		  font-family: var(--yuki-font-family), SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+		}
+		.markdown-body .blob-num {
+		  font-family: var(--yuki-font-family), SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+		}
+		.markdown-body .blob-code-inner {
+		  font-family: var(--yuki-font-family), SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+		}
+  /* END: From github-markdown */
+
+	.markdown-body img {
+		background-color: initial;
+	}
+
+	.dream-single .cover .cover-img {
+		height: 400px;
+		background-position: top;
+	}
+	figure {
+		text-align: center;
+	}
+
+	/* BGN: Yuki defaults */
+	.lang-separator {
+  	font-size: 1.3em;
+  	vertical-align: top;
+	}
+  .large-flag {
+  	font-size: 1.3em;
+  	vertical-align: text-top;
+  }
+  .no-lang {
+    cursor: not-allowed;
+    opacity:  .30;
+  }
+	/* END: Yuki defaults */
+</style>

@@ -1,0 +1,34 @@
+{{- /* HOW TO USE
+{{< imagecoverattr
+  link="link to image"
+  rel="noopener external nofollow"
+  alt=""
+  caption="description"
+  licensecode="any or cc0 or publicdomain or allrightsreserved"
+  licenseurl=""
+  licensename=""
+  attr="attribute to"
+  attrlink="attribution link"
+>}}
+*/ -}}
+<div class="header_attribution">
+  <footer class="attribution_copyright">
+    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+      {{- if eq (.Get "licensecode") "allrightsreserved" }}
+        <small>{{ i18n "word_coverimage" }} {{ i18n "attribution_allrightsreservedcover" }}{{ if .Get "attr" }} {{ i18n "word_to" }} {{ if .Get "attrlink" }}<a href="{{ .Get "attrlink" }}" rel="dct:creator noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">{{ end }}{{ .Get "attr" | markdownify }}{{ end }}{{ if .Get "attrlink" }}</a>{{ end }}.</small>
+      {{ else if eq (.Get "licensecode") "cc0" }}
+        <small>{{ i18n "word_coverimage" }} {{ i18n "attribution_cc0_extent" }}{{ i18n "punctuation_pause" }} <a href="https://iam.youronly.one" rel="dct:publisher noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">Yahuhanan Yukia Sese Cuneta</a> {{ i18n "word_has" }} <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">{{ i18n "attribution_cc0_waived" }}</a> {{ i18n "word_to" }} 「{{ if .Get "link" }}<a href="{{ .Get "link" }}"{{ with .Get "rel" }} rel="dct:title {{ . }}"{{ end }} referrerpolicy="strict-origin-when-cross-origin">{{ end }}{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}{{ if .Get "link" }}</a>{{ end }}」{{ i18n "punctuation_fullstop" }} {{ i18n "attribution_cc0_publishedfrom" }} <span property="vcard:Country" datatype="dct:ISO3166" content="PH" about="https://iam.youronly.one">{{ i18n "word_countryname" }}</span>{{ i18n "punctuation_fullstop" }}</small>
+      {{ else }}
+        <small>
+          {{ i18n "word_coverimage" }} 「{{ if .Get "link" }}<a href="{{ .Get "link" }}"{{ with .Get "rel" }} rel="dct:title {{ . }}"{{ end }} referrerpolicy="strict-origin-when-cross-origin">{{ end }}{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}{{ if .Get "link" }}</a>{{ end }}」{{ if .Get "attr" }} {{ i18n "attribution_by" }} {{ if .Get "attrlink" }}<a href="{{ .Get "attrlink" }}" rel="dct:creator noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">{{ end }}{{ .Get "attr" | markdownify }}{{ if .Get "attrlink" }}</a>{{ end }} {{ i18n "word_is" }} 
+            {{ if ne (.Get "licensecode") "publicdomain" }}
+              {{ i18n "attribution_licensedunder" }} <a href="{{ .Get "licenseurl" }}" rel="license noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">{{ with .Get "licensename" }}{{ . }}{{ end }}</a>{{ i18n "punctuation_fullstop" }}
+            {{ else }}
+              <a href="https://creativecommons.org/publicdomain/mark/1.0/" rel="license noopener external nofollow" referrerpolicy="strict-origin-when-cross-origin">{{ i18n "attribution_publicdomain" }}</a>{{ i18n "punctuation_fullstop" }}
+            {{ end }}
+          {{ end }}
+        </small>
+      {{ end }}
+    </p>
+  </footer>
+</div>
