@@ -1,7 +1,6 @@
 ####### Base Config #######
-  baseURL = "https://im.YourOnly.One/yuki"                    # .Site.BaseURL
+  baseURL = "https://im.youronly.one/yuki"                    # .Site.BaseURL
   title = "YOOki Chronicles"                # .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-  author = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"                               # .Site.Author
   copyright = ""                                          # .Site.Copyright; we are using our own footer
   timeZone = "Asia/Manila"
 
@@ -27,7 +26,7 @@
   enableInlineShortcodes = false                          # disabled for security reasons as per Hugo documentation
   enableRobotsTXT = false                                 # Hugo robots.txt template
   relativeURLs = false                                    # false for our use-case; make all relative URLs relative to content root
-  refLinksNotFoundURL = "https://YourOnly.One"
+  refLinksNotFoundURL = "https://im.youronly.one/yuki/"
 
   ## Dev settings ##
     publishDir = "../../live/public/yuki"
@@ -48,6 +47,18 @@
   ## Theme settings ##
     #pluralizeListTitles = false
   ## Theme settings ##
+
+
+#######  #######  #######  #######  #######  #######  #######  #######
+
+
+[author]                                                    # .Site.Author
+  name = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
+  email = ""
+  homepage = "https://youronly.one"
+  avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
+  rel = "me noopener"
+  #rel = "noopener external nofollow"
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
@@ -170,7 +181,7 @@
     #[[languages.en-ph.menu.main]]
       #name              = "YourOnly.One™"
       #identifier        = "yoo-home"
-      #url               = "https://YourOnly.One"
+      #url               = "https://im.youronly.one"
       #pre               = "<i class='fa fa-home'></i>"
       #weight            = 8
 
@@ -305,7 +316,7 @@
     #[[languages.ja.menu.main]]
       #name              = "YourOnly.One™"
       #identifier        = "yoo-home"
-      #url               = "https://im.YourOnly.One/yuki/ja"
+      #url               = "https://im.youronly.one/yuki/ja"
       #pre               = "<i class='fa fa-home'></i>"
       #weight            = 8
 
@@ -360,7 +371,7 @@
     #[[languages.ko.menu.main]]
       #name              = "YourOnly.One™"
       #identifier        = "yoo-home"
-      #url               = "https://im.YourOnly.One/yuki/ko"
+      #url               = "https://im.youronly.one/yuki/ko"
       #pre               = "<i class='fa fa-home'></i>"
       #weight            = 8
 
@@ -667,7 +678,6 @@
 
 [params]
   googleTagManager = "GTM-KT65GHZ"
-  siteFullURL = "https://im.YourOnly.One/yuki"                # Unfortunately we need to add this because using .Site.BaseURL is not working properly in /layouts/_default/list.atom.xml
   subdir = "yoo"
   rssfull = "true"
   faviconcache = "fmgy"
@@ -678,15 +688,14 @@
     siteStartYear = 2021
 
     description = "The chronicles of ᜌᜓᜃᜒ (Yuki ・ 雪亮) / Yahuhanan Yukia Sese Cuneta."
-    license = "https://im.YourOnly.One/p/legal-notice"
+    license = "https://im.youronly.one/p/legal-notice/"
     #issn = ""
     #awards = [""]
-    images = ["https://rsc.YourOnly.One/img/y/YOOki_Chronicles.webp"]
+    images = ["https://rsc.youronly.one/img/y/YOOki_Chronicles.webp"]
 
     name = "YourOnly.One" # your company name
-    author = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
     primaryauthor = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)" # Used as primary author if no specific is set
-    ownerhomepage = "https://YourOnly.One"
+    ownerhomepage = "https://youronly.one"
     alternatenames = [ "JC John Sese Cuneta", "Yuki"]
     gender = "https://schema.org/Male"
     knowslanguages = ["en-PH", "fil", "tl-Tglg"]
@@ -696,9 +705,9 @@
     copyrightnotice = "JC John Sese Cuneta"
     copyrightyear = "2021"      # same as datePublished
 
-    logourl = "https://rsc.YourOnly.One/img/y/YOOki_Chronicles.webp" # Used in structured data as logo url
+    logourl = "https://rsc.youronly.one/img/y/YOOki_Chronicles.webp" # Used in structured data as logo url
     keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Chronicles"] # Can be overriden per page
-    imageurl = "https://rsc.YourOnly.One/img/y/YOOki_Chronicles.webp" # Used in structured data as background image
+    imageurl = "https://rsc.youronly.one/img/y/YOOki_Chronicles.webp" # Used in structured data as background image
 
     contact = "" # Primary email address
     phone = "" # Primary phone
@@ -710,18 +719,18 @@
 
   ### BGN: Theme settings
     background = "#EBF6F7"
-    backgroundImage = "https://rsc.YourOnly.One/img/assets/vintage-933793_1920.jpg"
+    backgroundImage = "https://rsc.youronly.one/img/assets/vintage-933793_1920.jpg"
     linkColor = "blue"
 
     # dark mode
     defaultDark = true
     backgroundDark = "#202124"
-    backgroundImageDark = "https://rsc.YourOnly.One/img/assets/abstract-1780252_1280.png"
+    backgroundImageDark = "https://rsc.youronly.one/img/assets/abstract-1780252_1280.png"
     darkLinkColor = "gold"
     darkNav = true
     dark404 = true
 
-    avatar = "https://rsc.YourOnly.One/img/y/Yuki_flag-square-300x.webp"
+    avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
     headerTitle = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
     motto = "If this is not the end of oblivion, then I shall live everyday as if my life were to end this very day."
 
@@ -778,6 +787,14 @@
   ### END: Theme settings
 
   ### BGN: Other Settings ###
+    [params.author]                                                    # .Param "author.key"
+      name = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
+      email = ""
+      homepage = "https://youronly.one"
+      avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
+      rel = "me noopener"
+      #rel = "noopener external nofollow"
+
     [params.siteowner]
       given_name = "Yahuhanan Yukia"
       middle_name = "Sese"
@@ -785,7 +802,7 @@
 
     [params.semweb.publisher]
       name = "YourOnly.One"
-      sameas = "https://YourOnly.One"
+      sameas = "https://youronly.one"
 
     [params.verify]
       naver = "0212955cb24d6e2c67f92be3c7833cae8a98fa8e"
