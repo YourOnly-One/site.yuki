@@ -110,18 +110,18 @@ replacements = [
     #  source = "techmagus/eng-ph"
     #  target = "content"
     #  lang = "en"
-    [[imports.mounts]]
-      source = "techmagus/eng-ph"
-      target = "content"
-      lang = "en-ph"
-    [[imports.mounts]]
-      source = "techmagus/nihongo"
-      target = "content"
-      lang = "ja"
-    [[imports.mounts]]
-      source = "techmagus/hangugeo"
-      target = "content"
-      lang = "ko"
+    #[[imports.mounts]]
+    #  source = "techmagus/eng-ph"
+    #  target = "content"
+    #  lang = "en-ph"
+    #[[imports.mounts]]
+    #  source = "techmagus/nihongo"
+    #  target = "content"
+    #  lang = "ja"
+    #[[imports.mounts]]
+    #  source = "techmagus/hangugeo"
+    #  target = "content"
+    #  lang = "ko"
   # END: /techmagus/ content
 
 
