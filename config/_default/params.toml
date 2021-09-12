@@ -98,12 +98,12 @@ jquerycdn = true
   collapsibleTags = true
   collapseBySummary = false
 
-  #[params.advanced]
+  #[advanced]
   #  customCSS = ["css/custom.css"]
   #  customJSBefore = []
   #  customJS = []
 
-  #[params.experimental]
+  #[experimental]
   #  jsDate = true
   #  jsDateFormat = "yyyy年MM月dd日"
 
