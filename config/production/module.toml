@@ -82,18 +82,18 @@
     #  source = "way/eng-ph"
     #  target = "content"
     #  lang = "en"
-    #[[imports.mounts]]
-    #  source = "way/eng-ph"
-    #  target = "content"
-    #  lang = "en-ph"
-    #[[imports.mounts]]
-    #  source = "way/nihongo"
-    #  target = "content"
-    #  lang = "ja"
-    #[[imports.mounts]]
-    #  source = "way/hangugeo"
-    #  target = "content"
-    #  lang = "ko"
+    [[imports.mounts]]
+      source = "way/eng-ph"
+      target = "content"
+      lang = "en-ph"
+    [[imports.mounts]]
+      source = "way/nihongo"
+      target = "content"
+      lang = "ja"
+    [[imports.mounts]]
+      source = "way/hangugeo"
+      target = "content"
+      lang = "ko"
   # END: /way/ content
 
   # BGN: /techmagus/ content
