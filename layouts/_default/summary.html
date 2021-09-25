@@ -1,7 +1,11 @@
 <article class="ui attached segment card dream-card">
   <a class="image" href="{{ .Permalink }}">
-    {{ if isset .Params "cover" }}
-    <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
+    {{/* YourOnly.One: changed */}}
+    {{ $title := .Title }}
+    {{ with .Params.images }}
+      {{ range first 1 . }}
+        <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
     {{ else }}
       {{- /* YourOnly.One: Disabled, check where in sitemap this is showing up for the folders in /c/
         <img src="{{ "/img/" | relURL }}default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />

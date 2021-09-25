@@ -132,8 +132,11 @@
       </header>
 
       <article class="main">
-        {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-        <img class="cover" src="{{ .Params.Cover }}" />
+        {{/* YourOnly.One: changed */}}
+        {{ with and .Site.Params.showSummaryCoverInPost .Params.images }}
+          {{ range first 1 . }}
+            <img class="cover" src="{{ . }}" />
+          {{ end }}
         {{ end }}
 
         {{ .Content | emojify }}
