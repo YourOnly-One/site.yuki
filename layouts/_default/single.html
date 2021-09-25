@@ -132,15 +132,20 @@
       </header>
 
       <article class="main">
-        {{/* YourOnly.One: changed */}}
-        {{ with and .Site.Params.showSummaryCoverInPost .Params.images }}
-          {{ range first 1 . }}
-            <img class="cover" src="{{ . }}" />
+        {{- /* YourOnly.One: changed
+          {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
+          <img class="cover" src="{{ .Params.Cover }}" />
           {{ end }}
+        */ -}}
+        {{ with and .Site.Params.showSummaryCoverInPost .Params.images }}
+          <img class="cover" src="{{ index . 0 | absURL }}" />
         {{ end }}
 
         {{ .Content | emojify }}
       </article>
+
+
+
     </section>
 
     {{ if .Site.DisqusShortname }}
