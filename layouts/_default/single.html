@@ -144,8 +144,13 @@
         {{ .Content | emojify }}
       </article>
 
-
-
+      <article class="ui top attached segment">
+        <!-- BGN: YourOnly.One Head-01-Top -->
+          {{- if templates.Exists "partials/youronly.one-post-02-btm.html" -}}
+            {{ partial "youronly.one-post-02-btm.html" . }}
+          {{- end }}
+        <!-- END: YourOnly.One Head-01-Top -->
+      </article>
     </section>
 
     {{ if .Site.DisqusShortname }}
