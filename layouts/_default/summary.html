@@ -1,3 +1,5 @@
+{{- $authors := .Site.Data.persons -}}
+{{- $siteAuthor := index $authors ($.Param "semweb.person") }}
 <article class="ui attached segment card dream-card">
   <a class="image" href="{{ .Permalink }}">
     {{- /* YourOnly.One: changed
@@ -57,8 +59,14 @@
           {{- .Site.Params.author -}}
         {{- end -}}
       */ -}}
-      {{ with $.Param "author.homepage" }}<a href="{{ . }}" {{ with $.Param "author.rel" }}rel="{{ . }}"{{ end }}>{{ end }}{{ with $.Param "author.avatar" }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ end }}{{ with $.Param "author.homepage" }}</a>{{ end }}
-      {{ with $.Param "author.homepage" }}<a href="{{ . }}" {{ with $.Param "author.rel" }}rel="{{ . }}"{{ end }}>{{ end }}{{ $.Param "author.name" }}{{ with $.Param "author.homepage" }}</a>{{ end }}
+      {{ with $.Param "author.person" }}
+        {{ $author := index $authors . }}
+        {{ with ($.Param "author.avatar") | default $author.avatar }}{{ with ($.Param "author.url") | default $author.url }}<a href="{{ . }}" {{ with ($.Param "author.rel") | default $author.rel }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with ($.Param "author.url") | default $author.url }}</a>{{ end }}{{ end }}
+        {{ with ($.Param "author.url") | default $author.url }}<a href="{{ . }}" {{ with ($.Param "author.rel") | default $author.rel }}rel="{{ . }}"{{ end }}>{{ end }}{{ ($.Param "author.name") | default $author.name }}{{ with ($.Param "author.url") | default $author.url }}</a>{{ end }}
+      {{ else }}
+        {{ with $siteAuthor.avatar }}{{ with $siteAuthor.url }}<a href="{{ . }}" {{ with $siteAuthor.rel }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with $siteAuthor.url }}</a>{{ end }}{{ end }}
+        {{ with $siteAuthor.url }}<a href="{{ . }}" {{ with $siteAuthor.rel }}rel="{{ . }}"{{ end }}>{{ end }}{{ $siteAuthor.name }}{{ with $siteAuthor.url }}</a>{{ end }}
+      {{ end }}
     </div>
     <div class="reading-time">
       <i class="clock icon"></i>

@@ -17,6 +17,8 @@
 {{ end }}
 
 {{ define "main" }}
+{{- $authors := .Site.Data.persons -}}
+{{- $siteAuthor := index $authors ($.Param "semweb.person") }}
 <div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
   <!-- len <nav id="TableOfContents"></nav> == 32 -->
   {{ $showTOC := ge (len .TableOfContents) 33 }}
@@ -82,8 +84,14 @@
                   {{ .Site.Params.author }}
                 {{ end }}
               */ -}}
-              {{ with $.Param "author.homepage" }}<a href="{{ . }}" {{ with $.Param "author.rel" }}rel="{{ . }}"{{ end }}>{{ end }}{{ with $.Param "author.avatar" }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ end }}{{ with $.Param "author.homepage" }}</a>{{ end }}
-              {{ with $.Param "author.homepage" }}<a href="{{ . }}" {{ with $.Param "author.rel" }}rel="{{ . }}"{{ end }}>{{ end }}{{ $.Param "author.name" }}{{ with $.Param "author.homepage" }}</a>{{ end }}
+              {{ with $.Param "author.person" }}
+                {{ $author := index $authors . }}
+                {{ with ($.Param "author.avatar") | default $author.avatar }}{{ with ($.Param "author.url") | default $author.url }}<a href="{{ . }}" {{ with ($.Param "author.rel") | default $author.rel }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with ($.Param "author.url") | default $author.url }}</a>{{ end }}{{ end }}
+                {{ with ($.Param "author.url") | default $author.url }}<a href="{{ . }}" {{ with ($.Param "author.rel") | default $author.rel }}rel="{{ . }}"{{ end }}>{{ end }}{{ ($.Param "author.name") | default $author.name }}{{ with ($.Param "author.url") | default $author.url }}</a>{{ end }}
+              {{ else }}
+                {{ with $siteAuthor.avatar }}{{ with $siteAuthor.url }}<a href="{{ . }}" {{ with $siteAuthor.rel }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with $siteAuthor.url }}</a>{{ end }}{{ end }}
+                {{ with $siteAuthor.url }}<a href="{{ . }}" {{ with $siteAuthor.rel }}rel="{{ . }}"{{ end }}>{{ end }}{{ $siteAuthor.name }}{{ with $siteAuthor.url }}</a>{{ end }}
+              {{ end }}
 
                | {{ if .Site.Params.Experimental.jsDate }}
                   <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
