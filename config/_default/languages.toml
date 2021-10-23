@@ -3,7 +3,7 @@
 #[en]
   #languageName = "English"
   #languageFlag = "🇬🇧"
-  #languageCodeHTML = "en"
+  #languageCode = "en"
   #languageCodeCountry = "DO_NOT_USE"
   #timeZone = "Etc/UTC"
   #weight = 110
@@ -11,7 +11,6 @@
 [en-ph]
   languageName = "English (PH)"
   languageFlag = "🇵🇭"
-  languageCodeHTML = "en-PH"
   languageCodeCountry = "ph"
   timeZone = "Asia/Manila"
   weight = 111
@@ -19,7 +18,7 @@
 #[fil]
   #languageName = "Filipino"
   #languageFlag = "🇵🇭"
-  #languageCodeHTML = "fil"
+  #languageCode = "fil"
   #languageCodeCountry = "ph"
   #timeZone = "Asia/Manila"
   #weight = 120
@@ -30,7 +29,7 @@
 #[tl-tglg]
   #languageName = "Tagalog Baybayin"
   #languageFlag = "🇵🇭"
-  #languageCodeHTML = "tl-Tglg"
+  #languageCode = "tl-Tglg"
   #languageCodeCountry = "ph"
   #timeZone = "Asia/Manila"
   #weight = 121
@@ -41,7 +40,7 @@
 #[zh-hant]
   #languageName = "中文（繁體）"
   #languageFlag = "🇨🇳"
-  #languageCodeHTML = "zh-Hant"
+  #languageCode = "zh-Hant"
   #languageCodeCountry = "cn"
   #timeZone = "Asia/Shanghai"
   #weight = 130
@@ -52,7 +51,7 @@
 #[zh-hans]
   #languageName = "中文（简体）"
   #languageFlag = "🇨🇳"
-  #languageCodeHTML = "zh-Hans"
+  #languageCode = "zh-Hans"
   #languageCodeCountry = "cn"
   #timeZone = "Asia/Shanghai"
   #weight = 131
@@ -63,7 +62,7 @@
 [ja]
   languageName = "日本語"
   languageFlag = "🇯🇵"
-  languageCodeHTML = "ja"
+  languageCode = "ja"
   languageCodeCountry = "jp"
   timeZone = "Asia/Tokyo"
   weight = 140
@@ -75,7 +74,7 @@
 [ko]
   languageName = "한국어"
   languageFlag = "🇰🇷"
-  languageCodeHTML = "ko"
+  languageCode = "ko"
   languageCodeCountry = "kr"
   timeZone = "Asia/Seoul"
   weight = 150

@@ -35,22 +35,21 @@
       <!-- <div class="txt_center"><iframe src="https://freesecure.timeanddate.com/clock/i7bkql2t/n1440/tlkr47/fn8/fs20/fc00de23/tc000/pct/ftb/bas7/bat4/bac00de23/pa10/tt0/tw0/tm3/td2/th1/ts1/ta1/tb4" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen" frameborder="0" width="155" height="80" allowtransparency="true"></iframe></div> -->
       <!-- <div class="txt_center" style="font-size: 7em; height: 1.20em;"><span class="unicode_emoji">&#x1F1F5;&#x1F1ED;</span></div> -->
     </div>
-    {{ if .IsTranslated -}}
-      <div id="translations_sidebar" class="ui segment toc txt_center">
-          <a href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</a>
-          {{ if .IsTranslated -}}
-            {{ range .Translations }}
-              <span class="lang-separator">・</span> <a href="{{ .Permalink }}" lang="{{ .Lang }}" title="{{ .Language.Params.LanguageName }}"><span class="large-flag">{{ .Language.Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</a>
-            {{ end }}
-          {{ else }}
-            {{ range .Site.Languages }}
-              {{ if not (eq .Lang $.Site.Language.Lang) }}
-                <span class="no-lang" title="{{ .Params.LanguageName }}"><span class="large-flag">{{ .Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</span>
-              {{ end }}
-            {{ end }}
+
+    <div id="translations_sidebar" class="ui segment toc txt_center">
+      <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</a>
+      {{ if .IsTranslated -}}
+        {{ range .Translations }}
+          <span class="lang-separator">・</span> <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</a>
+        {{ end }}
+      {{ else }}
+        {{ range .Site.Languages }}
+          {{ if not (eq .Lang $.Site.Language.Lang) }}
+            <span class="lang-separator">・</span> <span class="no-lang" title="{{ .Params.LanguageName }}"><span class="large-flag">{{ .Params.languageflag }}</span> ({{ .Params.LanguageName }})</span>
           {{ end }}
-      </div>
-    {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
 
     {{ if $showTOC }}
     <div class="ui segment toc">

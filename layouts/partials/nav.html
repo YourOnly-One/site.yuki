@@ -22,12 +22,12 @@
   </a>
   {{ end }}
   <div class="item">
-    <a href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
+    <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
   </div>
   {{ if .IsTranslated -}}
     {{ range .Translations }}
       <div class="item">
-        <a href="{{ .Permalink }}" lang="{{ .Lang }}" title="{{ .Language.Params.LanguageName }}"><span class="large-flag">{{ .Language.Params.languageflag }}</span></a>
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
       </div>
     {{ end }}
   {{ else }}
