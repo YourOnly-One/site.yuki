@@ -1,7 +1,7 @@
 {{- $datapersons := .Site.Data.persons -}}
 {{- $semwebpersons := .Site.Params.semweb.persons -}}
 {{- $frontmatterpersons := .Params.authors }}
-<article class="ui attached segment card dream-card">
+<article class="ui attached segment card dream-card" data-clarity-region="article">
   <a class="image" href="{{ .Permalink }}">
     {{- /* YourOnly.One: changed
       {{ if isset .Params "cover" }}

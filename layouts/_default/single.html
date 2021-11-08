@@ -145,7 +145,7 @@
         </h1>
       </header>
 
-      <article class="main">
+      <article class="main" data-clarity-region="article">
         {{- /* YourOnly.One: changed
           {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
           <img class="cover" src="{{ .Params.Cover }}" />
@@ -158,7 +158,7 @@
         {{ .Content | emojify }}
       </article>
 
-      <article class="ui top attached segment">
+      <article class="ui top attached segment" data-clarity-region="article">
         <!-- BGN: YourOnly.One Head-01-Top -->
           {{- if templates.Exists "partials/youronly.one-post-02-btm.html" -}}
             {{ partial "youronly.one-post-02-btm.html" . }}
@@ -168,13 +168,13 @@
     </section>
 
     {{ if .Site.DisqusShortname }}
-    <article class="ui segment post-disqus-area" data-html2canvas-ignore>
+    <article class="ui segment post-disqus-area" data-clarity-region="article" data-html2canvas-ignore>
       {{ template "_internal/disqus.html" . }}  {{/* YourOnly.One: Do not remove */}}
     </article>
     {{ end }}
 
     {{ if .Site.Params.utterancesRepo }}
-    <article class="ui segment utterances-comments" data-html2canvas-ignore>
+    <article class="ui segment utterances-comments" data-clarity-region="article" data-html2canvas-ignore>
       <script
         src="https://utteranc.es/client.js"
         repo="{{ .Site.Params.utterancesRepo }}"
@@ -187,7 +187,7 @@
     {{ end }}
 
     {{ if .Site.Params.valine }}
-    <article class="ui segment" data-html2canvas-ignore>
+    <article class="ui segment" data-clarity-region="article" data-html2canvas-ignore>
       <div id="vcomments"></div>
     </article>
 
