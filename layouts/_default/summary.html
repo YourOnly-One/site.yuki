@@ -2,7 +2,9 @@
 {{- $semwebpersons := .Site.Params.semweb.persons -}}
 {{- $frontmatterpersons := .Params.authors }}
 <article class="ui attached segment card dream-card" data-clarity-region="article">
-  {{ if isset .Params "cover" }}
+  {{- /* YourOnly.One: not needed
+    {{ if isset .Params "cover" }}
+  */ -}}
   <a class="image" href="{{ .Permalink }}">
     {{- /* YourOnly.One: changed
       {{ if isset .Params "cover" }}
@@ -13,13 +15,19 @@
     */ -}}
     <img src="{{ index (.Param "images") 0 | absURL }}" alt="{{ .Title }}" />
   </a>
-  {{ end }}
+  {{- /* YourOnly.One: not needed
+    {{ end }}
+  */ -}}
 
-  {{ if isset .Params "cover" }}
+  {{- /* YourOnly.One: not needed
+    {{ if isset .Params "cover" }}
+  */ -}}
   <div class="content">
-  {{ else }}
-  <div class="content no-cover">
-  {{ end }}
+  {{- /* YourOnly.One: not needed
+    {{ else }}
+    <div class="content no-cover">
+    {{ end }}
+  */ -}}
     <h2 class="ui medium header">
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h2>
