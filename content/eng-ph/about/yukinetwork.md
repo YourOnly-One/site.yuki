@@ -1,6 +1,7 @@
 +++
 title = "Yuki network"
 date = "2020-03-25T06:00:00"
+lastmod = "2020-03-25T06:00:00"
 weight = "11"
 +++
 
