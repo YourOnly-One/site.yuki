@@ -57,6 +57,17 @@
     </div>
     {{ end }}
 
+    {{- /* BGN: YourOnly.One Content-PartOf */ -}}
+      {{- $partofseries := $.Site.RegularPages.RelatedIndices . "series" -}}
+      {{- if $partofseries -}}
+        {{- if templates.Exists "partials/youronly.one-content-partof.html" -}}
+          <div id="partof" class="ui segment toc">
+            {{ partial "youronly.one-content-partof.html" . }}
+          </div>
+        {{- end }}
+      {{- end -}}
+    {{- /* END: YourOnly.One Content-PartOf */ -}}
+
     {{ if $shareInAside }}
     {{ partial "share1.html" . }}
     {{ end }}
@@ -155,7 +166,15 @@
           <img class="cover" src="{{ index . 0 | absURL }}" />
         {{ end }}
 
-        {{ .Content | emojify }}
+        {{- /* BGN: YourOnly.One: changed */ -}}
+          {{- /* .Content | emojify */ -}}
+
+          {{- $inserthere := `<div role="cover-image-attributions">` -}}
+          {{- $insertcontent := partial "youronly.one-content-partof.html" . -}}
+          {{- $joined := print $insertcontent $inserthere -}}
+          {{- $content := replace .Content $inserthere $joined 1 -}}
+          {{ $content | safeHTML }}
+        {{- /* END: YourOnly.One: changed */ -}}
       </article>
 
       <article class="ui top attached segment" data-clarity-region="article">
