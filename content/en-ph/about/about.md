@@ -1,11 +1,11 @@
 +++
 title = "The YOOki (柳紀 ・ 유 기) Chronicles"
-date = "2020-03-25T06:00:00"
-lastmod = "2020-03-25T06:00:00"
+date = "2020-03-25T06:00:00+00:00"
+lastmod = "2020-03-25T06:00:00+00:00"
 weight = "1"
 +++
 
-__The YOOki (柳紀 ・ 유 기) Chronicles__ is __[ᜌᜓᜃᜒ (Yuki ・ 雪亮)](https://YourOnly.One)__'s return into casual and personal blogging. The name "YOOki" is a mash-up of the acronym of __YourOnly.One__ and my nickname __ᜌᜓᜃᜒ (Yuki ・ 雪亮)__.
+**The YOOki (柳紀 ・ 유 기) Chronicles** is __[ᜌᜓᜃᜒ (Yuki ・ 雪亮)](https://YourOnly.One)__'s return into casual and personal blogging. The name "YOOki" is a mash-up of the acronym of **YourOnly.One** and my nickname **ᜌᜓᜃᜒ (Yuki ・ 雪亮)**.
 
 Interestingly, <q>according to Chinese legend, 「柳」 (YOO) is an ancient Chinese surname. The ancestors of the surname were closely linked with the ancient sage-king named Yu Shun. In Korea, the 「유」 (YOO) lineage traces to the Xia, Han, and Joseon dynasties. Holders of the surname Yu or Yoo had a reputation for charity and diligence</q>.[^유]
 
