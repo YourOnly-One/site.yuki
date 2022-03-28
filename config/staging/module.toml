@@ -124,6 +124,61 @@ replacements = [
       lang = "ko"
   # END: /techmagus/ content
 
+  # BGN: /yuki/ fill gaps content
+    [[imports.mounts]]
+      source = "yuki/en-ph"
+      target = "content"
+      lang = "ja"
+    [[imports.mounts]]
+      source = "yuki/en-ph"
+      target = "content"
+      lang = "ko"
+  # END: /yuki/ fill gaps content
+
+  # BGN: /snoworld/ fill gaps content
+    [[imports.mounts]]
+      source = "snoworld/en-ph"
+      target = "content"
+      lang = "ja"
+    [[imports.mounts]]
+      source = "snoworld/en-ph"
+      target = "content"
+      lang = "ko"
+  # END: /snoworld/ fill gaps content
+
+  # BGN: /love/ fill gaps content
+    [[imports.mounts]]
+      source = "love/en-ph"
+      target = "content"
+      lang = "ja"
+    [[imports.mounts]]
+      source = "love/en-ph"
+      target = "content"
+      lang = "ko"
+  # END: /love/ fill gaps content
+
+  # BGN: /way/ fill gaps content
+    #[[imports.mounts]]
+    #  source = "way/en-ph"
+    #  target = "content"
+    #  lang = "ja"
+    #[[imports.mounts]]
+    #  source = "way/en-ph"
+    #  target = "content"
+    #  lang = "ko"
+  # END: /way/ fill gaps content
+
+  # BGN: /techmagus/ fill gaps content
+    #[[imports.mounts]]
+    #  source = "techmagus/en-ph"
+    #  target = "content"
+    #  lang = "ja"
+    #[[imports.mounts]]
+    #  source = "techmagus/en-ph"
+    #  target = "content"
+    #  lang = "ko"
+  # END: /techmagus/ fill gaps content
+
 
 # See: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
 #   if you add a mounts section you should remove the old staticDir etc. settings.
