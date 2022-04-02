@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{{/* Multilang support for lang attribute */}}
+<html lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" prefix="og: https://ogp.me/ns#{{ if in .Site.Params.mainTypes .Type }} article: https://ogp.me/ns/article#{{ end }}">
+  <head>
+    <!-- BGN: YourOnly.One Head-01-Top -->
+      {{- if templates.Exists "partials/youronly.one-head-01-top.html" -}}
+        {{ partial "youronly.one-head-01-top.html" . }}
+      {{- end }}
+    <!-- END: YourOnly.One Head-01-Top -->
+
+    {{- /* YourOnly.One: We already have this
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    */ -}}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ .Title }}{{ if ne .Title .Site.Title }} -{{ .Site.Title }}{{ end }}</title>
+
+    {{ partial "head.html" . }}
+
+    {{ block "css" . }} {{ end }}
+
+    {{ range .Site.Params.Advanced.customCSS }}
+    <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{ end }}
+
+    <!-- BGN: YourOnly.One Head-02-Bottom -->
+      {{- if templates.Exists "partials/youronly.one-head-02-btm.html" -}}
+        {{ partial "youronly.one-head-02-btm.html" . }}
+      {{- end }}
+    <!-- END: YourOnly.One Head-02-Bottom -->
+  </head>
+
+  <body class="default">
+    <!-- BGN: Yuki Body Top -->
+      {{- if templates.Exists "partials/youronly.one-body-01-top.html" -}}
+        {{ partial "youronly.one-body-01-top.html" . }}
+      {{- end }}
+    <!-- END: Yuki Body Top -->
+    {{ partial "nav.html" . }}
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            {{ block "main" . }} {{ end }}
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              <!-- BGN: YourOnly.One Footer-01 -->
+                {{- if templates.Exists "partials/youronly.one-footer-01.html" -}}
+                  {{ partial "youronly.one-footer-01.html" . }}
+                {{- end }}
+              <!-- END: YourOnly.One Footer-01 -->
+              <p class="txt_center">
+                <a href="https://github.com/g1eny0ung/hugo-theme-dream" rel="noopener external nofollow">Dream</a> {{ i18n "themeby" }} <a href="https://github.com/g1eny0ung" rel="noopener external nofollow">Yue Yang</a>
+              </p>
+
+              {{ if .Site.Params.footerBottomText }}
+              <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
+              {{ end }}
+            </footer>
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            {{ partial "back.html" . }}
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" integrity="sha256-CgSoWC9w5wNmI1aN8dIMK+6DPelUEtvDr+Bc2m/0Nx8=" crossorigin="anonymous"></script>
+
+    {{ if .Site.Params.enableSearch }}
+    {{ partial "search.html" . }}
+    {{ end }}
+
+    {{ range .Site.Params.Advanced.customJSBefore }}
+    <script src="{{ . | relURL }}"></script>
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+    {{ block "js" . }} {{ end }}
+
+    {{ range .Site.Params.Advanced.customJS }}
+    <script src="{{ . | relURL }}"></script>
+    {{ end }}
+
+    {{ if .Site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+  </body>
+</html>

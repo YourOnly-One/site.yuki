@@ -1,0 +1,42 @@
+{{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
+<nav class="ui secondary menu dream-menu dream-nav">
+{{ else if .Site.Params.darkNav }}
+<nav class="ui secondary inverted menu dream-menu dream-nav">
+{{ else }}
+<nav class="ui secondary menu dream-menu dream-nav">
+{{ end }}
+  <a class="item dream-flip-toggle" title="{{ i18n "flip" }}">
+    <i class="large link bullseye icon"></i>
+  </a>
+  <a class="item" href="{{ .Site.BaseURL | relLangURL }}" title="{{ i18n "home" }}">
+    <i class="large link home icon"></i>
+  </a>
+  {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
+  <a class="item" onclick="themeSwitch(event)">
+    <i class="large link icon theme-switch"></i>
+  </a>
+  {{ end }}
+  {{ if .Site.Params.enableSearch }}
+  <a class="item" title="{{ i18n "search" }}" onclick="toggleSearch(event)">
+    <i class="large link search icon"></i>
+  </a>
+  {{ end }}
+  <div class="item">
+    <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
+  </div>
+  {{ if .IsTranslated -}}
+    {{ range .Translations }}
+      <div class="item">
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
+      </div>
+    {{ end }}
+  {{ else }}
+    {{ range .Site.Languages }}
+      {{ if not (eq .Lang $.Site.Language.Lang) }}
+        <div class="item">
+          <span class="no-lang" title="{{ .Params.LanguageName }}"><span class="large-flag">{{ .Params.languageflag }}</span></span>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</nav>

@@ -1,0 +1,49 @@
+{{ define "title" }}
+{{- if or (eq .Data.Singular "tag") (eq .Data.Singular "category") -}}
+{{ .Data.Term }}
+{{- end -}}
+{{ end }}
+
+{{ define "main"}}
+
+{{ partial "header.html" . }}
+
+<div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
+  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single">
+    <section class="ui segment">
+      <header>
+        <h1 class="ui large header">{{- .Title -}}</h1>
+      </header>
+      <article class="main" data-clarity-region="article">
+        {{ .Content | emojify }}
+      </article>
+    </section>
+  </div>
+</div>
+
+<div class="ui relaxed grid dream-grid">
+  {{ $paginator := .Paginate .Pages }}
+  {{ range $paginator.Pages }}
+  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+    {{ .Render "summary" }}
+  </div>
+  {{ end }}
+
+  {{ if or $paginator.HasPrev $paginator.HasNext  }}
+  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+    {{ partial "paginator.html" (dict "paginator" $paginator) }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "js" }}
+
+{{ if .Site.Params.Experimental.jsDate }}
+{{ partial "luxon.html" . }}
+{{ end }}
+
+<script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
+<script src="{{ "/js/masonry.pkgd.min.js" | relURL }}"></script>
+<script src="{{ "/js/grid.js" | relURL }}"></script>
+{{ end }}

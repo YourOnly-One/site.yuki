@@ -1,0 +1,41 @@
+# Translations for Hangugeo (Korean)
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+[backToHome]
+other = "홈으로"
+
+[flip]
+other = "뒤집어!"
+
+[archives]
+other = "아카이브"
+
+[article]
+one = "기사 1 개"
+other = "{{ .Count }} 개의 기사"
+
+[group]
+one = "1 group"
+other = "{{ .Count }} groups"
+
+[socialLinks]
+other = "소셜 링크"
+
+[minuteRead]
+one = " 분 읽기"
+other = " 분 읽기"
+
+[updateAt]
+other = "업데이트"
+
+[noTag]
+other = "태그 없음"
+
+[prevPage]
+other = "이전 페이지"
+
+[nextPage]
+other = "다음 페이지"
+
+[saveAsImage]
+other = "이미지로 저장"

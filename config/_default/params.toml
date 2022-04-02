@@ -1,0 +1,131 @@
+#mainSections = ["blog", "posts"]                                             # Hugo default
+mainTypes = ["article", "sitepage", "review"]                                                # YourOnly.One
+
+subdir = "yoo"
+rssfull = "true"
+faviconcache = "fmgy"
+faviconbuster = "TimmieIsMyFate"
+jquerycdn = true
+websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfeedr.com/", "https://pubsubhubbub.superfeedr.com/", "https://websubhub.com/hub"]
+
+googleadsense = "ca-pub-8360283248006398"
+
+### BGN: Structured Data ###
+	siteStartYear = 2021
+
+	description = "The chronicles of ᜌᜓᜃᜒ (Yuki ・ 雪亮) / Yahuhanan Yukia Sese Cuneta."
+	license = "https://im.youronly.one/p/legal-notice/"
+	keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Chronicles"] # Can be overriden per page
+	images = ["https://rsc.youronly.one/img/y/YOOki_Chronicles.webp", "https://rsc.youronly.one/img/y/Yuki_flag-300h.webp", "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"]
+	#copyright = ""
+### END: Structured Data ###
+
+### BGN: Theme settings
+	background = "#EBF6F7"
+	backgroundImage = "https://rsc.youronly.one/img/assets/vintage-933793_1920.jpg"
+	linkColor = "blue"
+
+	# dark mode
+	defaultDark = true
+	backgroundDark = "#202124"
+	backgroundImageDark = "https://rsc.youronly.one/img/assets/abstract-1780252_1280.png"
+	darkLinkColor = "gold"
+	darkNav = true
+	dark404 = true
+
+	avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
+	headerTitle = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
+	motto = "If this is not the end of oblivion, then I shall live everyday as if my life were to end this very day."
+
+	#maxTags = 5
+	#footerBottomText = ""
+	rss = true
+
+	# utterancesRepo = ""
+
+	# valine = true
+	# LEANCLOUD_APP_ID = ""
+	# LEANCLOUD_APP_KEY = ""
+
+	#email = ""
+	twitter = "YourOnlyONEofcl"
+	facebook = "YourOnly.ONE.ofcl"
+	instagram = "YourOnly.One"
+	#mastodon = "https://mastodon.social/@youronlyone" # Icon no longer showing
+	linkedin = "youronlyone"
+	#github = ""
+	#stackoverflow = ""
+	#codepen = ""
+
+	#favicon = "/favicon.ico"
+
+	highlightjs = true
+	highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+	highlightjsExtraLanguages = ["ocaml"]
+	highlightjsTheme = "gruvbox-light"
+	highlightjsThemeDark = "gruvbox-dark"
+
+	# search
+	enableSearch = true
+
+	# options
+	showSummaryCoverInPost = true
+	hasTwitterEmbed = true
+	reversePostAndAside = true
+	shareInAside = false
+	showInAside = true  # This is our own custom setting
+	fixedNav = true
+	collapsibleTags = true
+	collapseBySummary = false
+
+	#[advanced]
+	#  customCSS = ["css/custom.css"]
+	#  customJSBefore = []
+	#  customJS = []
+
+	#[experimental]
+	#  jsDate = true
+	#  jsDateFormat = "yyyy年MM月dd日"
+### END: Theme settings
+
+### BGN: Other Settings ###
+	[semweb]
+		org = "yelosan"
+
+		#issn = ""
+		acquirelicensepage = "https://youronly.one/p/legal-notice/"
+		copyrightnotice = "Copyleft 🄯 CC-BY-SA 4.0 International by JC John Sese Cuneta"
+		credittext = "YourOnly.One (https://youronly.one)"
+		datefirstpublished = "2021-02-06"
+		isblog = true
+		license = "https://youronly.one/p/legal-notice/"
+		publisher = "https://yelosan.youronly.one/"
+		sameas = [
+			"https://mastodon.social/@youronlyone",
+			"https://pixelfed.social/youronlyone",
+			"https://youtube.com/YourOnlyONEofcl",
+			"https://twitter.com/YourOnlyONEofcl",
+			"https://instagram.com/YourOnly.One",
+			"https://facebook.com/YourOnly.ONE.ofcl"
+		]
+
+		[[semweb.persons]]
+			person = "yuki"
+			#id = ""
+			#name = ""ᜌᜓᜃᜒ (Yuki | 雪亮)"
+			#url = ""
+			#avatar = ""
+			#rel = "noopener external nofollow"
+
+	[verify]
+		flattr = "4j1gl5"
+		naver = "0212955cb24d6e2c67f92be3c7833cae8a98fa8e"
+		wot = "06c7ef6e7986586661ef"
+		ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
+		followit = "jqEnpsdBvHltNryJFB4A"
+
+	[analytics]
+		microanalyticsio = "ZwSg9rf6GA"
+		cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
+		microsoftclarity = "63ddi0b99e"
+### END: Other Settings ###
