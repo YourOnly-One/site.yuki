@@ -1,4 +1,4 @@
-module yuki
+module gitlab.com/youronlyone/site.yuki
 
 go 1.18
 
