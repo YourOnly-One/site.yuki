@@ -4,7 +4,7 @@
   "description": "",
   "dir": "auto",
   "lang": "en-PH",
-  "categories": ["books", "education", "entertainment", "fitness", "food", "games", "health", "lifestyle", "music", "personalization", "productivity", "reviews" "security", "social", "sports", "travel", "utilities"],
+  "categories": ["books", "education", "entertainment", "fitness", "food", "games", "health", "lifestyle", "music", "personalization", "productivity", "reviews", "security", "social", "sports", "travel", "utilities"],
   "display": "minimal-ui",
   "scope": "https://im.youronly.one/yuki/",
   "start_url": "https://im.youronly.one/yuki/",
