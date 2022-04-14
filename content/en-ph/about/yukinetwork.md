@@ -6,6 +6,6 @@ weight = "11"
 +++
 
 - [Snoworld](https://im.youronly.one/snoworld/)
-- [Way of Believers](https://im.youronly.one/way/)
+- [One Way Faith](https://im.youronly.one/way/)
 - [techmagus](https://im.youronly.one/techmagus/)
 - [Love and Relationship](https://im.youronly.one/love/)
