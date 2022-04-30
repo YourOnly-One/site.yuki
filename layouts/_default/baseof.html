@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {{/* Multilang support for lang attribute */}}
-<html lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" prefix="og: https://ogp.me/ns#{{ if in .Site.Params.mainTypes .Type }} article: https://ogp.me/ns/article#{{ end }}">
+<html lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" prefix="og: https://ogp.me/ns#{{ if in .Site.Params.mainTypes .Type }} article: https://ogp.me/ns/article#{{ end }}" class="h-feed">
   <head>
     <!-- BGN: YourOnly.One Head-01-Top -->
       {{- if templates.Exists "partials/youronly.one-head-01-top.html" -}}
@@ -12,7 +12,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     */ -}}
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{ .Title }}{{ if ne .Title .Site.Title }} -{{ .Site.Title }}{{ end }}</title>
+    <title class="p-name">{{ .Title }}{{ if ne .Title .Site.Title }} -{{ .Site.Title }}{{ end }}</title>
 
     {{ partial "head.html" . }}
 

@@ -6,11 +6,11 @@
   {{ if eq .Type "posts" }}
   <!-- Page Author & Description -->
   <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
-  <meta name="description" content="{{ .Summary | plainify }}" />
+  <meta name="description" content="{{ .Summary | plainify }}" class="p-summary" />
   {{ else }}
   <!-- Site Author & Description -->
   <meta name="author" content="{{ .Site.Params.author }}" />
-  <meta name="description" content="{{ .Site.Params.description }}" />
+  <meta name="description" content="{{ .Site.Params.description }}" class="p-summary" />
   {{ end }}
 
   <!-- Site Generator -->
