@@ -78,10 +78,10 @@
   {{ end }}
 
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    <section class="ui segment">
+    <section class="h-entry ui segment">
       <header>
         <h1 class="ui large header">
-          {{- .Title -}}
+          <span class="p-name">{{- .Title -}}</span>
           <span class="sub header">
             <span class="left">
               {{- /* YourOnly.One: changed
@@ -159,7 +159,7 @@
         </h1>
       </header>
 
-      <article class="h-entry main" data-clarity-region="article">
+      <article class="e-content main" data-clarity-region="article">
         {{- /* YourOnly.One: changed
           {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
           <img class="u-featured cover" src="{{ .Params.Cover }}" />
@@ -172,13 +172,11 @@
         {{- /* BGN: YourOnly.One: changed */ -}}
           {{- /* .Content | emojify */ -}}
 
-          <div class="e-content">
           {{- $inserthere := `<div role="cover-image-attributions">` -}}
           {{- $insertcontent := partial "youronly.one-content-partof.html" . -}}
           {{- $joined := print $insertcontent $inserthere -}}
           {{- $content := replace .Content $inserthere $joined 1 -}}
           {{ $content | safeHTML }}
-          </div>
         {{- /* END: YourOnly.One: changed */ -}}
       </article>
 
