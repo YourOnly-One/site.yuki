@@ -1,3 +1,4 @@
+{{- $datetimeformat := i18n "datetimeformat" -}}
 {{- $datapersons := .Site.Data.persons -}}
 {{- $semwebpersons := .Site.Params.semweb.persons -}}
 {{- $frontmatterpersons := .Params.authors }}
@@ -22,19 +23,19 @@
   {{- /* YourOnly.One: not needed
     {{ if isset .Params "cover" }}
   */ -}}
-  <div class="content">
+  <div class="h-entry content">
   {{- /* YourOnly.One: not needed
     {{ else }}
     <div class="content no-cover">
     {{ end }}
   */ -}}
-    <h2 class="ui medium header">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <h2 class="p-name ui medium header">
+      <a href="{{ .RelPermalink }}" class="u-url" rel="bookmark">{{ .Title }}</a>
     </h2>
     <div class="meta">
       <p class="date">
         {{ if .Site.Params.Experimental.jsDate }}
-          <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+          <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time>
         {{ else }}
           {{- if eq .Site.Language.Lang "zh" -}}
             {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
@@ -45,12 +46,13 @@
           {{- else if eq .Site.Language.Lang "fr" -}}
             {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
           {{- else -}}
-            {{ .Date.Format "2006-01-02 15:04 MST" }}  {{- /* YourOnly.One: changed */ -}}
+            {{/* YourOnly.One: changed */}}
+            <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time>
           {{- end -}}
         {{ end }}
       </p>
     </div>
-    <div class="description">
+    <div class="p-summary description">
       {{ .Summary | emojify | safeHTML }}
     </div>
   </div>
@@ -76,18 +78,18 @@
       */ -}}
       {{ if $frontmatterpersons }}{{ range $i, $frontmatterperson := index $frontmatterpersons }}{{ $dataperson := index $datapersons $frontmatterperson.person }}{{ if $i }}, {{ end }}
         {{- /* note: if [[authors]] is set in frontmatter, use this to display a list of persons with fallback to /data/persons/ if present */}}
-        {{ with or ($frontmatterperson.avatar) ($dataperson.avatar) }}{{ with or ($frontmatterperson.url) ($dataperson.url) }}<a href="{{ . }}" {{ with or ($frontmatterperson.rel) ($dataperson.rel) }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with or ($frontmatterperson.url) ($dataperson.url) }}</a>{{ end }}{{ end }}
-        {{ with or ($frontmatterperson.url) ($dataperson.url) }}<a href="{{ . }}" {{ with or ($frontmatterperson.rel) ($dataperson.rel) }}rel="{{ . }}"{{ end }}>{{ end }}{{ or ($frontmatterperson.name) ($dataperson.name) }}{{ with or ($frontmatterperson.url) ($dataperson.url) }}</a>{{ end }}
+        {{ with or ($frontmatterperson.avatar) ($dataperson.avatar) }}{{ with or ($frontmatterperson.url) ($dataperson.url) }}<a href="{{ . }}" class="p-author h-card" rel="author{{ with or ($frontmatterperson.rel) ($dataperson.rel) }} {{ . }}{{ end }}">{{ end }}<img class="u-photo ui avatar image" src="{{ . }}" alt="avatar" />{{ with or ($frontmatterperson.url) ($dataperson.url) }}</a>{{ end }}{{ end }}
+        {{ with or ($frontmatterperson.url) ($dataperson.url) }}<a href="{{ . }}" class="u-url p-name" rel="author{{ with or ($frontmatterperson.rel) ($dataperson.rel) }} {{ . }}{{ end }}">{{ end }}{{ or ($frontmatterperson.name) ($dataperson.name) }}{{ with or ($frontmatterperson.url) ($dataperson.url) }}</a>{{ end }}
         {{ end }}
       {{ else if $semwebpersons }}{{ range $i, $semwebperson := index $semwebpersons }}{{ $dataperson := index $datapersons $semwebperson.person }}{{ if $i }}, {{ end }}
         {{- /* note: else if [[semweb.persons]] is set in config file, use it to display a list of persons with fallback to /data/persons/ if present */}}
-        {{ with or ($semwebperson.avatar) ($dataperson.avatar) }}{{ with or ($semwebperson.url) ($dataperson.url) }}<a href="{{ . }}" {{ with or $semwebperson.rel $dataperson.rel }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with or $semwebperson.url $dataperson.url }}</a>{{ end }}{{ end }}
-        {{ with or ($semwebperson.url) ($dataperson.url) }}<a href="{{ . }}" {{ with or ($semwebperson.rel) ($dataperson.rel) }}rel="{{ . }}"{{ end }}>{{ end }}{{ or ($semwebperson.name) ($dataperson.name) }}{{ with or ($semwebperson.url) ($dataperson.url) }}</a>{{ end }}
+        {{ with or ($semwebperson.avatar) ($dataperson.avatar) }}{{ with or ($semwebperson.url) ($dataperson.url) }}<a href="{{ . }}" class="p-author h-card" rel="author{{ with or ($semwebperson.rel) ($dataperson.rel) }} {{ . }}{{ end }}">{{ end }}<img class="u-photo ui avatar image" src="{{ . }}" alt="avatar" />{{ with or ($semwebperson.url) ($dataperson.url) }}</a>{{ end }}{{ end }}
+        {{ with or ($semwebperson.url) ($dataperson.url) }}<a href="{{ . }}" class="u-url p-name" rel="author{{ with or ($semwebperson.rel) ($dataperson.rel) }} {{ . }}{{ end }}">{{ end }}{{ or ($semwebperson.name) ($dataperson.name) }}{{ with or ($semwebperson.url) ($dataperson.url) }}</a>{{ end }}
         {{ end }}
       {{ else if .Param "author" }}
         {{- /* note: else if default Hugo 'author' param is used in frontmatter or config, display generic */}}
-        {{ with .Param "author.avatar" }}{{ with .Param "author.url" }}<a href="{{ . }}" {{ with .Param "author.rel" }}rel="{{ . }}"{{ end }}>{{ end }}<img class="ui avatar image" src="{{ . }}" alt="avatar" />{{ with .Param "author.url" }}</a>{{ end }}{{ end }}
-        {{ with .Param "author.url" }}<a href="{{ . }}" {{ with .Param "author.rel" }}rel="{{ . }}"{{ end }}>{{ end }}{{ .Param "author.name" }}{{ with .Param "author.url" }}</a>{{ end }}
+        {{ with .Param "author.avatar" }}{{ with .Param "author.url" }}<a href="{{ . }}" class="p-author h-card" rel="author{{ with .Param "author.rel" }} {{ . }}{{ end }}">{{ end }}<img class="u-photo ui avatar image" src="{{ . }}" alt="avatar" />{{ with .Param "author.url" }}</a>{{ end }}{{ end }}
+        {{ with .Param "author.url" }}<a href="{{ . }}" class="u-url p-name" rel="author{{ with .Param "author.rel" }} {{ . }}{{ end }}">{{ end }}{{ .Param "author.name" }}{{ with .Param "author.url" }}</a>{{ end }}
       {{ end }}
     </div>
     <div class="reading-time">
