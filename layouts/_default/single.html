@@ -78,7 +78,7 @@
   {{ end }}
 
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    <section class="h-entry ui segment">
+    <section class="h-entry ui segment" data-clarity-region="article">
       <header>
         <h1 class="ui large header">
           <span class="p-name">{{- .Title -}}</span>
@@ -159,7 +159,7 @@
         </h1>
       </header>
 
-      <article class="e-content main" data-clarity-region="article">
+      <article class="e-content main">
         {{- /* YourOnly.One: changed
           {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
           <img class="u-featured cover" src="{{ .Params.Cover }}" />
@@ -180,7 +180,7 @@
         {{- /* END: YourOnly.One: changed */ -}}
       </article>
 
-      <article class="ui top attached segment" data-clarity-region="article">
+      <article class="ui top attached segment">
         <!-- BGN: YourOnly.One Head-01-Top -->
           {{- if templates.Exists "partials/youronly.one-post-02-btm.html" -}}
             {{ partial "youronly.one-post-02-btm.html" . }}
@@ -190,18 +190,18 @@
     </section>
 
     {{ template "_internal/webmention.html" . }}
-    <article class="ui segment post-webmention" data-clarity-region="article" data-html2canvas-ignore>
+    <article class="ui segment post-webmention" data-html2canvas-ignore>
       <div id="webmentions"></div>
     </article>
 
     {{ if .Site.DisqusShortname }}
-    <article class="ui segment post-disqus-area" data-clarity-region="article" data-html2canvas-ignore>
+    <article class="ui segment post-disqus-area" data-html2canvas-ignore>
       {{ template "_internal/disqus.html" . }}  {{/* YourOnly.One: Do not remove */}}
     </article>
     {{ end }}
 
     {{ if .Site.Params.utterancesRepo }}
-    <article class="ui segment utterances-comments" data-clarity-region="article" data-html2canvas-ignore>
+    <article class="ui segment utterances-comments" data-html2canvas-ignore>
       <script
         src="https://utteranc.es/client.js"
         repo="{{ .Site.Params.utterancesRepo }}"
@@ -214,7 +214,7 @@
     {{ end }}
 
     {{ if .Site.Params.valine }}
-    <article class="ui segment" data-clarity-region="article" data-html2canvas-ignore>
+    <article class="ui segment" data-html2canvas-ignore>
       <div id="vcomments"></div>
     </article>
 
