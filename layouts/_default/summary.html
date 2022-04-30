@@ -2,11 +2,11 @@
 {{- $datapersons := .Site.Data.persons -}}
 {{- $semwebpersons := .Site.Params.semweb.persons -}}
 {{- $frontmatterpersons := .Params.authors }}
-<article class="ui attached segment card dream-card" data-clarity-region="article">
+<article class="h-entry ui attached segment card dream-card" data-clarity-region="article">
   {{- /* YourOnly.One: not needed
     {{ if isset .Params "cover" }}
   */ -}}
-  <a class="image" href="{{ .Permalink }}">
+  <a class="u-featured image" href="{{ .Permalink }}">
     {{- /* YourOnly.One: changed
       {{ if isset .Params "cover" }}
       <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
@@ -23,7 +23,7 @@
   {{- /* YourOnly.One: not needed
     {{ if isset .Params "cover" }}
   */ -}}
-  <div class="h-entry content">
+  <div class="e-content content">
   {{- /* YourOnly.One: not needed
     {{ else }}
     <div class="content no-cover">
