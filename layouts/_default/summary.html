@@ -38,7 +38,7 @@
           <time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time>
         {{ else }}
           {{- if eq .Site.Language.Lang "zh" -}}
-            {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+            {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
           {{- else if eq .Site.Language.Lang "es" -}}
             {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
           {{- else if eq .Site.Language.Lang "pt" -}}
