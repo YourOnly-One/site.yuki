@@ -5,9 +5,9 @@
   {{ $aboutPages := $headless.Resources.ByType "page" }}
   {{ range $aboutPages }}
   <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article class="h-entry ui segment markdown-body" data-clarity-region="article">
-      <div class="p-name ui medium header">{{ .Title }}</div>
-      <div class="e-content">{{ .Content | emojify }}</div>
+    <article class="ui segment markdown-body" data-clarity-region="article">
+      <div class="ui medium header">{{ .Title }}</div>
+      <div>{{ .Content | emojify }}</div>
     </article>
   </div>
   {{ end }}
