@@ -160,6 +160,10 @@
       </header>
 
       <article class="e-content main">
+        {{/* BGN: Badges */}}
+        {{ partial "badges.html" . }}
+        {{/* END: Badges */}}
+
         {{- /* YourOnly.One: changed
           {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
           <img class="u-featured cover" src="{{ .Params.Cover }}" />
