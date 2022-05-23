@@ -8,4 +8,4 @@ weight = "11"
 - [Snoworld](https://im.youronly.one/snoworld/)
 - [One Way Faith](https://im.youronly.one/way/)
 - [techmagus](https://im.youronly.one/techmagus/)
-- [Love and Relationship](https://im.youronly.one/love/)
+- [Love and Relationships](https://im.youronly.one/love/)
