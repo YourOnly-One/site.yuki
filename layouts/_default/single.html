@@ -112,19 +112,19 @@
                 <address class="p-author h-card">{{ with .Param "author.url" }}<a href="{{ . }}" class="u-url p-name" rel="author{{ with .Param "author.rel" }} {{ . }}{{ end }}">{{ end }}{{ .Param "author.name" }}{{ with .Param "author.url" }}</a>{{ end }}</address>
               {{ end }}
                 &nbsp;| {{ if .Site.Params.Experimental.jsDate }}
-                {{ if not .Date.IsZero }}<time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time>{{ end }}
+                {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .PublishDate }}</time>{{ end }}
                 {{ else }}
                   {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+                    {{ index .Site.Data.zh.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Day }} 日，{{ .PublishDate.Year }} 年
                   {{ else if eq .Site.Language.Lang "es" }}
-                    {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+                    {{ index .Site.Data.es.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ .PublishDate.Day }} de {{ index .Site.Data.es.Month (printf "%d" .PublishDate.Month) }} de {{ .PublishDate.Year }}
                   {{ else if eq .Site.Language.Lang "pt" }}
-                    {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+                    {{ index .Site.Data.pt.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ .PublishDate.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .PublishDate.Month) }} de {{ .PublishDate.Year }}
                   {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+                    {{ index .Site.Data.fr.Weekday (printf "%d" .PublishDate.Weekday) }} {{ .PublishDate.Day }} {{ index .Site.Data.fr.Month (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Year }}
                   {{ else }}
                     {{/* YourOnly.One: changed */}}
-                    {{ if not .Date.IsZero }}<time datetime="{{ .Date.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .Date }}</time>{{ end }}
+                    {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .PublishDate }}</time>{{ end }}
                   {{ end }}
                 {{ end }}
 
@@ -143,7 +143,7 @@
                   {{ else if eq .Site.Language.Lang "pt" }}
                     {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
                   {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+                    {{ index .Site.Data.fr.Weekday (printf "%d" .Lastmod.Weekday) }} {{ .Lastmod.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }}
                   {{ else }}
                     {{/* YourOnly.One: changed */}}
                     {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat .Lastmod }}</time>{{ end }}
