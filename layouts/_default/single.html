@@ -112,7 +112,7 @@
                 <address class="p-author h-card">{{ with .Param "author.url" }}<a href="{{ . }}" class="u-url p-name" rel="author{{ with .Param "author.rel" }} {{ . }}{{ end }}">{{ end }}{{ .Param "author.name" }}{{ with .Param "author.url" }}</a>{{ end }}</address>
               {{ end }}
                 &nbsp;| {{ if .Site.Params.Experimental.jsDate }}
-                {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .PublishDate }}</time>{{ end }}
+                {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat (.PublishDate.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} {{ $.Site.Language.Params.tzAbbr }}</time>{{ end }}
                 {{ else }}
                   {{ if eq .Site.Language.Lang "zh" }}
                     {{ index .Site.Data.zh.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Day }} 日，{{ .PublishDate.Year }} 年
@@ -124,7 +124,7 @@
                     {{ index .Site.Data.fr.Weekday (printf "%d" .PublishDate.Weekday) }} {{ .PublishDate.Day }} {{ index .Site.Data.fr.Month (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Year }}
                   {{ else }}
                     {{/* YourOnly.One: changed */}}
-                    {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat .PublishDate }}</time>{{ end }}
+                    {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat (.PublishDate.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} {{ $.Site.Language.Params.tzAbbr }}</time>{{ end }}
                   {{ end }}
                 {{ end }}
 
@@ -134,7 +134,7 @@
               {{ if ne .PublishDate .Lastmod }}
                 | {{ i18n "updateAt" }}
                 {{ if .Site.Params.Experimental.jsDate }}
-                {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat .Lastmod }}</time>{{ end }}
+                {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat (.Lastmod.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} {{ $.Site.Language.Params.tzAbbr }}</time>{{ end }}
                 {{ else }}
                   {{ if eq .Site.Language.Lang "zh" }}
                     {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
@@ -146,7 +146,7 @@
                     {{ index .Site.Data.fr.Weekday (printf "%d" .Lastmod.Weekday) }} {{ .Lastmod.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }}
                   {{ else }}
                     {{/* YourOnly.One: changed */}}
-                    {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat .Lastmod }}</time>{{ end }}
+                    {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat (.Lastmod.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} {{ $.Site.Language.Params.tzAbbr }}</time>{{ end }}
                   {{ end }}
                 {{ end }}
               {{ end }}
