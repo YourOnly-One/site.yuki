@@ -37,20 +37,22 @@
       {{- /* <div class="txt_center" style="font-size: 7em; height: 1.20em;"><span class="unicode_emoji">&#x1F1F5;&#x1F1ED;</span></div> */ -}}
     </div>
 
-    <div id="translations_sidebar" class="ui segment toc txt_center">
-      <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</a>
-      {{ if .IsTranslated -}}
-        {{ range .Translations }}
-          <span class="lang-separator">・</span> <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span> ({{ .Site.Language.LanguageName }})</a>
-        {{ end }}
-      {{ else }}
-        {{ range .Site.Languages }}
-          {{ if not (eq .Lang $.Site.Language.Lang) }}
-            <span class="lang-separator">・</span> <span class="no-lang" title="{{ .Params.LanguageName }}"><span class="large-flag">{{ .Params.languageflag }}</span> ({{ .Params.LanguageName }})</span>
+    {{/* BGN: translation menu */}}
+      <div id="translations_sidebar" class="ui segment toc txt_center">
+        <a href="{{ .RelPermalink }}" lang="{{ or .Site.LanguageCode .Site.Language.Lang }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Language.Params.languageflag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
+        {{ if .IsTranslated -}}
+          {{ range .Translations }}
+            <span class="lang-separator">・</span> <a href="{{ .RelPermalink }}" lang="{{ or .Site.LanguageCode .Site.Language.Lang }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Language.Params.languageflag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
+          {{ end }}
+        {{ else }}
+          {{ range .Site.Languages }}
+            {{ if ne .Lang $.Site.Language.Lang }}
+              <span class="lang-separator">・</span> <span class="translation-none" title="{{ .Params.LanguageName }}"><span class="lang-flag-large">{{ .Params.languageflag }}</span>&nbsp;&nbsp;({{ .Params.LanguageName }})</span>
+            {{ end }}
           {{ end }}
         {{ end }}
-      {{ end }}
-    </div>
+      </div>
+    {{/* END: translation menu */}}
 
     {{ if $showTOC }}
     <div class="ui segment toc">

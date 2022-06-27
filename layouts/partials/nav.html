@@ -21,22 +21,24 @@
     <i class="large link search icon"></i>
   </a>
   {{ end }}
-  <div class="item">
-    <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="active" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
-  </div>
-  {{ if .IsTranslated -}}
-    {{ range .Translations }}
-      <div class="item">
-        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" title="{{ .Site.Language.LanguageName }}"><span class="large-flag">{{ .Site.Language.Params.languageflag }}</span></a>
-      </div>
-    {{ end }}
-  {{ else }}
-    {{ range .Site.Languages }}
-      {{ if not (eq .Lang $.Site.Language.Lang) }}
+  {{/* BGN: translation menu */}}
+    <div class="item">
+      <a href="{{ .RelPermalink }}" lang="{{ or .Site.LanguageCode .Site.Language.Lang }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Language.Params.languageflag }}</span></a>
+    </div>
+    {{ if .IsTranslated -}}
+      {{ range .Translations }}
         <div class="item">
-          <span class="no-lang" title="{{ .Params.LanguageName }}"><span class="large-flag">{{ .Params.languageflag }}</span></span>
+          <a href="{{ .RelPermalink }}" lang="{{ or .Site.LanguageCode .Site.Language.Lang }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Language.Params.languageflag }}</span></a>
         </div>
       {{ end }}
+    {{ else }}
+      {{ range .Site.Languages }}
+        {{ if ne .Lang $.Site.Language.Lang }}
+          <div class="item">
+            <span class="translation-none" title="{{ .Params.LanguageName }}"><span class="lang-flag-large">{{ .Params.languageflag }}</span></span>
+          </div>
+        {{ end }}
+      {{ end }}
     {{ end }}
-  {{ end }}
+  {{/* END: translation menu */}}
 </nav>

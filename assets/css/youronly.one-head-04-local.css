@@ -156,16 +156,7 @@ figure {
 }
 
 /* BGN: Yuki defaults */
-.lang-separator {
-	font-size: 1.3em;
-	vertical-align: top;
-}
-.large-flag {
-	font-size: 1.3em;
-	vertical-align: text-top;
-}
-.no-lang {
-	cursor: not-allowed;
-	opacity:  .30;
+#translations_sidebar .emoji {
+	vertical-align: middle;
 }
 /* END: Yuki defaults */
