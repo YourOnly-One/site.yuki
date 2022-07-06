@@ -87,7 +87,7 @@
   tzAbbr = "JST"                          # custom
   tzAbbrTitle = "Japan Standard Time"                        # custom
   weight = 140
-  title = "YOOkiクロニクル"
+  title = "YOOkiクロニクル 📜"
   [ja.params]
     description = "Yahuhanan Yukia Sese Cunetaの年代記 / ᜌᜓᜃᜒ (Yuki ・ 雪亮)."     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
     motto = "これが忘却の終わりではないなら、私は自分の人生がまさにこの日に終わるかのように毎日生きるでしょう。"
@@ -102,7 +102,7 @@
   tzAbbr = "KST"                          # custom
   tzAbbrTitle = "Korea Standard Time"                        # custom
   weight = 150
-  title = "YOOki 연대기"
+  title = "YOOki 연대기 📜"
   [ko.params]
     description = "Yahuhanan Yukia Sese Cuneta의 연대기 / ᜌᜓᜃᜒ (Yuki ・ 雪亮)."      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
     motto = "이것이 망각의 끝이 아니라면 내 인생이 바로 오늘 끝날 듯 매일 살 것이다."
