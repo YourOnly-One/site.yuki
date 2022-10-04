@@ -1,9 +1,10 @@
 {{- $androidchrome192png := resources.Get "favicon/android-chrome-192x192.png" | resources.Fingerprint "sha384" -}}
 {{- $androidchrome512png := resources.Get "favicon/android-chrome-512x512.png" | resources.Fingerprint "sha384" -}}
 {
-  "name": "YOOki Chronicles",
-  "short_name": "YOOki",
-  "description": "",
+  "name": "YOOki Chronicles 📜",
+  "short_name": "YOOki 📜",
+  "description": "The chronicles of ᜌᜓᜃᜒ (Yuki ・ 雪亮) / Yahuhanan Yukia Sese Cuneta.",
+  "id": "/yuki/",
   "dir": "auto",
   "lang": "en-PH",
   "categories": ["books", "education", "entertainment", "fitness", "food", "games", "health", "lifestyle", "music", "personalization", "productivity", "reviews", "security", "social", "sports", "travel", "utilities"],
