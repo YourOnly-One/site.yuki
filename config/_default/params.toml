@@ -8,137 +8,138 @@ websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfee
 googleadsense = "ca-pub-8360283248006398"
 
 ### BGN: Structured Data ###
-	siteStartYear = 2021
+  siteStartYear = 2021
 
-	description = "The chronicles of ᜌᜓᜃᜒ (Yuki ・ 雪亮) / Yahuhanan Yukia Sese Cuneta."
-	license = "https://im.youronly.one/p/legal-notice/"
-	keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Chronicles"] # Can be overriden per page
-	images = ["https://rsc.youronly.one/img/y/YOOki_Chronicles.webp", "https://rsc.youronly.one/img/y/Yuki_flag-300h.webp", "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"]
-	#copyright = ""
+  description = "The chronicles of ᜌᜓᜃᜒ (Yuki ・ 雪亮) / Yahuhanan Yukia Sese Cuneta."
+  license = "https://im.youronly.one/p/legal-notice/"
+  keywords = ["YourOnly.One", "Yuki", "ᜌᜓᜃᜒ", "Chronicles"] # Can be overriden per page
+  images = ["https://rsc.youronly.one/img/y/YOOki_Chronicles.webp", "https://rsc.youronly.one/img/y/Yuki_flag-300h.webp", "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"]
+  #copyright = ""
 ### END: Structured Data ###
 
 ### BGN: Theme settings
-	background = "#EBF6F7"
-	backgroundImage = "https://rsc.youronly.one/img/assets/vintage-933793_1920.jpg"
-	linkColor = "blue"
+  background = "#EBF6F7"
+  backgroundImage = "https://rsc.youronly.one/img/assets/vintage-933793_1920.jpg"
+  linkColor = "blue"
 
-	# dark mode
-	defaultDark = true
-	backgroundDark = "#202124"
-	backgroundImageDark = "https://rsc.youronly.one/img/assets/abstract-1780252_1280.png"
-	darkLinkColor = "gold"
-	darkNav = true
-	dark404 = true
+  # dark mode
+  defaultDark = true
+  backgroundDark = "#202124"
+  backgroundImageDark = "https://rsc.youronly.one/img/assets/abstract-1780252_1280.png"
+  darkLinkColor = "gold"
+  darkNav = true
+  dark404 = true
 
-	avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
-	headerTitle = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
-	motto = "If this is not the end of oblivion, then I shall live everyday as if my life were to end this very day."
+  avatar = "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"
+  headerTitle = "ᜌᜓᜃᜒ (Yuki ・ 雪亮)"
+  motto = "If this is not the end of oblivion, then I shall live everyday as if my life were to end this very day."
 
-	#maxTags = 5
-	#footerBottomText = ""
-	rss = true
+  #maxTags = 5
+  #footerBottomText = ""
+  rss = true
 
-	# utterancesRepo = ""
+  # utterancesRepo = ""
 
-	# valine = true
-	# LEANCLOUD_APP_ID = ""
-	# LEANCLOUD_APP_KEY = ""
+  # valine = true
+  # LEANCLOUD_APP_ID = ""
+  # LEANCLOUD_APP_KEY = ""
 
-	#email = ""
-	twitter = "YourOnlyONEofcl"
-	facebook = "YourOnly.ONE.ofcl"
-	instagram = "YourOnly.One"
-	#mastodon = "https://mastodon.social/@youronlyone" # Icon no longer showing
-	linkedin = "youronlyone"
-	#github = ""
-	#stackoverflow = ""
-	#codepen = ""
+  #email = ""
+  twitter = "YourOnlyONEofcl"
+  facebook = "YourOnly.ONE.ofcl"
+  instagram = "YourOnly.One"
+  #mastodon = "https://mastodon.social/@youronlyone" # Icon no longer showing
+  linkedin = "youronlyone"
+  #github = ""
+  #stackoverflow = ""
+  #codepen = ""
 
-	#favicon = "/favicon.ico"
+  #favicon = "/favicon.ico"
 
-	highlightjs = true
-	highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
-	highlightjsExtraLanguages = ["ocaml"]
-	highlightjsTheme = "gruvbox-light"
-	highlightjsThemeDark = "gruvbox-dark"
+  highlightjs = true
+  highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  highlightjsExtraLanguages = ["ocaml"]
+  highlightjsTheme = "gruvbox-light"
+  highlightjsThemeDark = "gruvbox-dark"
 
-	# search
-	enableSearch = true
+  # search
+  enableSearch = true
 
-	# options
-	showSummaryCoverInPost = true
-	hasTwitterEmbed = true
-	reversePostAndAside = true
-	shareInAside = false
-	showInAside = true  # This is our own custom setting
-	fixedNav = true
-	collapsibleTags = true
-	collapseBySummary = false
+  # options
+  showSummaryCoverInPost = true
+  hasTwitterEmbed = true
+  reversePostAndAside = true
+  shareInAside = false
+  showInAside = true  # This is our own custom setting
+  fixedNav = true
+  collapsibleTags = true
+  collapseBySummary = false
 
-	#[advanced]
-	#  customCSS = ["css/custom.css"]
-	#  customJSBefore = []
-	#  customJS = []
+  #[advanced]
+  #  customCSS = ["css/custom.css"]
+  #  customJSBefore = []
+  #  customJS = []
 
-	#[experimental]
-	#  jsDate = true
-	#  jsDateFormat = "yyyy年MM月dd日"
+  #[experimental]
+  #  jsDate = true
+  #  jsDateFormat = "yyyy年MM月dd日"
 ### END: Theme settings
 
 ### BGN: Other Settings ###
-	[semweb]
-		org = "yelosan"
+  [semweb]
+    org = "yelosan"
 
-		#isni = ""
-		#issn = ""
-		acquirelicensepage = "https://im.youronly.one/p/legal-notice/"
-		copyrightnotice = "Copyleft 🄯 CC-BY-SA 4.0 International by JC John Sese Cuneta"
-		credittext = "I'M YourOnly.One (https://im.youronly.one/)"
-		datecreated = "2021-02-06"
-		isblog = true
-		license = "https://im.youronly.one/p/legal-notice/"
-		publisher = "https://yelosan.youronly.one/"
-		sameas = [
-			"https://facebook.com/101597304949708/",
-			"https://facebook.com/yelosanpub/",
-			"https://c.im/@youronlyone",
-			"https://mastodon.social/@youronlyone",
-			"https://mastodon.online/@youronlyone",
-			"https://pixelfed.social/youronlyone",
-			"https://youtube.com/YourOnlyONEofcl",
-			"https://twitter.com/YourOnlyONEofcl",
-			"https://instagram.com/YourOnly.One",
-			"https://facebook.com/YourOnly.ONE.ofcl",
-			"https://www.pinterest.com/YourOnlyONEofcl",
-			"https://www.eyeem.com/u/YourOnlyOne",
-			"https://www.goodreads.com/youronlyone",
-			"https://vero.co/youronlyone",
-			"https://ecency.com/@youronlyone",
-			"https://hive.blog/@youronlyone",
-			"https://steemit.com/@youronlyone",
-			"https://gitlab.com/techmagus",
-			"https://github.com/techmagus"
-		]
+    #isni = ""
+    #issn = ""
+    acquirelicensepage = "https://im.youronly.one/p/legal-notice/"
+    copyrightnotice = "Copyleft 🄯 CC-BY-SA 4.0 International by JC John Sese Cuneta"
+    credittext = "I'M YourOnly.One (https://im.youronly.one/)"
+    datecreated = "2021-02-06"
+    isblog = true
+    license = "https://im.youronly.one/p/legal-notice/"
+    publisher = "https://yelosan.youronly.one/"
+    sameas = [
+      "https://facebook.com/101597304949708/",
+      "https://facebook.com/yelosanpub/",
+      "https://c.im/@youronlyone",
+      "https://mastodon.social/@youronlyone",
+      "https://mastodon.online/@youronlyone",
+      "https://pixelfed.social/youronlyone",
+      "https://youtube.com/YourOnlyONEofcl",
+      "https://twitter.com/YourOnlyONEofcl",
+      "https://instagram.com/YourOnly.One",
+      "https://facebook.com/YourOnly.ONE.ofcl",
+      "https://www.pinterest.com/YourOnlyONEofcl",
+      "https://www.eyeem.com/u/YourOnlyOne",
+      "https://www.goodreads.com/youronlyone",
+      "https://vero.co/youronlyone",
+      "https://ecency.com/@youronlyone",
+      "https://hive.blog/@youronlyone",
+      "https://steemit.com/@youronlyone",
+      "https://gitlab.com/techmagus",
+      "https://github.com/techmagus"
+    ]
 
-		[[semweb.persons]]
-			person = "yuki"
-			#id = ""
-			#name = ""ᜌᜓᜃᜒ (雪亮 | 스노 | Yuki)"
-			#url = ""
-			#avatar = ""
-			#rel = "noopener external nofollow"
+    [[semweb.persons]]
+      person = "yuki"
+      #id = ""
+      #name = ""ᜌᜓᜃᜒ (雪亮 | 스노 | Yuki)"
+      #url = ""
+      #avatar = ""
+      #rel = "noopener external nofollow"
 
-	[verify]
-		flattr = "4j1gl5"
-		wot = "06c7ef6e7986586661ef"
-		ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
-		followit = "jqEnpsdBvHltNryJFB4A"
+  [verify]
+    flattr = "4j1gl5"
+    wot = "06c7ef6e7986586661ef"
+    ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
+    followit = "jqEnpsdBvHltNryJFB4A"
 
-	[analytics]
-		cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
-		microanalyticsio = "ZwSg9rf6GA"
-		naver = "1375cb4224f1c40"
-		counterdev = "youronlyone"
-		swetrix = "bYdcXUajNvru"
-		microsoftclarity = "63ddi0b99e"
+  [analytics]
+    cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
+    microanalyticsio = "ZwSg9rf6GA"
+    #naver = "1375cb4224f1c40"   # https://youronly.one
+    naver = "137a7c92882ac90"   # https://im.youronly.one
+    counterdev = "youronlyone"
+    swetrix = "bYdcXUajNvru"
+    microsoftclarity = "63ddi0b99e"
 ### END: Other Settings ###
