@@ -261,6 +261,7 @@
 {{ partial "highlight.html" . }}
 {{ end }}
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>
+{{/* NOTE: html2canvas 1.4.1 as of 2022-10-06 */}}
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" integrity="sha256-6H5VB5QyLldKH9oMFUmjxw2uWpPZETQXpCkBaDjquMs=" crossorigin="anonymous" type="text/javascript"></script>
 <script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}
