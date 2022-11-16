@@ -1,6 +1,6 @@
 module gitlab.com/youronlyone/site.yuki
 
-go 1.18
+go 1.19
 
 require (
 	github.com/techmagus/hugo-theme-dream main
