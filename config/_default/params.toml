@@ -39,18 +39,12 @@ favicon_mstilecolor = "#2b5797"
   #footerBottomText = ""
   rss = true
 
-  # utterancesRepo = ""
-
-  # valine = true
-  # LEANCLOUD_APP_ID = ""
-  # LEANCLOUD_APP_KEY = ""
-
   #email = ""
   twitter = "YourOnlyONEofcl"
   facebook = "YourOnly.ONE.ofcl"
   instagram = "YourOnly.One"
-  #mastodon = "https://mastodon.social/@youronlyone" # Icon no longer showing
-  linkedin = "youronlyone"
+  mastodon = "https://c.im/@youronlyone" # we have our own badge
+  #linkedin = "youronlyone"
   #github = ""
   #stackoverflow = ""
   #codepen = ""
@@ -71,10 +65,11 @@ favicon_mstilecolor = "#2b5797"
   hasTwitterEmbed = true
   reversePostAndAside = true
   shareInAside = false
-  showInAside = true  # This is our own custom setting
   fixedNav = true
   collapsibleTags = true
   collapseBySummary = false
+  # disableFlip = true
+  # hideBackSocialLinks = true
 
   #[advanced]
   #  customCSS = ["css/custom.css"]
