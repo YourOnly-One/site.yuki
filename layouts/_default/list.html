@@ -8,6 +8,7 @@
 
 {{ partial "header.html" . }}
 
+{{/* BGN: title and content section in list */}}
 <div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single">
     <section class="h-entry ui segment" data-clarity-region="article">
@@ -20,6 +21,7 @@
     </section>
   </div>
 </div>
+{{/* END: title and content section in list */}}
 
 <div class="ui relaxed grid dream-grid">
   {{ $paginator := .Paginate .Pages }}

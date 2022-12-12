@@ -37,10 +37,12 @@
       </a>
     </article>
 
+    {{/* YourOnly.One: changed to categories instead of tags */}}
     {{ if .Site.Taxonomies.categories }}
     {{ $tags := slice }}
     {{ $first := slice }}
     {{ $rest := slice }}
+    {{/* YourOnly.One: changed to categories instead of tags */}}
     {{ range .Site.Taxonomies.categories }}
       {{ $tags = $tags | append (dict "title" .Page.Title "link" .Page.RelPermalink) }}
     {{ end }}

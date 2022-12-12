@@ -13,12 +13,12 @@
   {{ end }}
 
   {{ if not .Site.Params.hideBackSocialLinks }}
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article class="ui segment">
-      <div class="ui medium header">{{ i18n "socialLinks" }}</div>
-      {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
-    </article>
-  </div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article class="ui segment">
+        <div class="ui medium header">{{ i18n "socialLinks" }}</div>
+        {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
+      </article>
+    </div>
   {{ end }}
 
   <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
@@ -29,8 +29,8 @@
     {{ end }}
   </div>
 
-  {{- /*
-  {{ if and .Site.DisqusShortname  }}
+  {{- /* YourOnly.One: we only need in-article positioning
+  {{ if and .Site.DisqusShortname .IsHome }}
   <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
     <article class="ui segment">
       {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}

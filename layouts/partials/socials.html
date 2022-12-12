@@ -1,14 +1,9 @@
 <nav class="ui secondary menu dream-menu dream-socials">
   {{ if .Site.Params.rss }}
-    {{- /* We are using our own Atom feed file
-  <a class="item" href="{{ "index.xml" | relLangURL }}">
-    <i class="{{ .IconSize }} rss square icon" title="RSS"></i>
-  </a>
-    */ -}}
-
-  <a class="item" href="{{ "feed.xml" | relLangURL }}">
-    <i class="{{ .IconSize }} rss square icon" title="Feed"></i>
-  </a>
+    {{/* YourOnly.One: changed to feed.xml and Feed */}}
+    <a class="item" href="{{ "feed.xml" | relLangURL }}">
+      <i class="{{ .IconSize }} rss square icon" title="Feed"></i>
+    </a>
   {{ end }}
 
   {{ if .Site.Params.email }}
@@ -17,15 +12,9 @@
   </a>
   {{ end }}
 
-  {{ if .Site.Params.twitter }}
-  <a class="item" href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">
-    <i class="{{ .IconSize }} twitter icon" title="Twitter"></i>
-  </a>
-  {{ end }}
-
-  {{ if .Site.Params.facebook }}
-  <a class="item" href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank">
-    <i class="{{ .IconSize }} facebook icon" title="Facebook"></i>
+  {{ if .Site.Params.mastodon }}
+  <a class="item" href="{{ .Site.Params.mastodon }}" target="_blank">
+    <i class="{{ .IconSize }} icon-mastodon icon" title="Mastodon"></i>
   </a>
   {{ end }}
 
@@ -35,9 +24,15 @@
   </a>
   {{ end }}
 
-  {{ if .Site.Params.mastodon }}
-  <a class="item" href="{{ .Site.Params.mastodon }}" target="_blank">
-    <i class="{{ .IconSize }} icon-mastodon icon" title="Mastodon"></i>
+  {{ if .Site.Params.facebook }}
+  <a class="item" href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank">
+    <i class="{{ .IconSize }} facebook icon" title="Facebook"></i>
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.twitter }}
+  <a class="item" href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">
+    <i class="{{ .IconSize }} twitter icon" title="Twitter"></i>
   </a>
   {{ end }}
 
