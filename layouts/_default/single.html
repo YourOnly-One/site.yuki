@@ -25,12 +25,10 @@
   <!-- len <nav id="TableOfContents"></nav> == 32 -->
   {{ $showTOC := ge (len .TableOfContents) 33 }}
   {{ $shareInAside := .Site.Params.shareInAside }}
-  {{ $showAside := .Site.Params.showInAside }}  {{/* YourOnly.One: Do not remove */}}
+  {{ $showAside := or $showTOC $shareInAside }}
 
   {{ if $showAside }}
   <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
-  {{ end }}
-
     <div id="Mabuhay_Clock_Flag" class="ui segment actions">
       <div class="txt_center margin_bottom_block_end" lang="fil-Tglg" style="font-size: 3em; margin-bottom: 0.3em; margin-block-end: 0.3em;">ᜋᜊᜓᜑᜌ᜔</div>
       {{- /* <div class="txt_center"><iframe anonymous src="https://freesecure.timeanddate.com/clock/i7bkql2t/n1440/tlkr47/fn8/fs20/fc00de23/tc000/pct/ftb/bas7/bat4/bac00de23/pa10/tt0/tw0/tm3/td2/th1/ts1/ta1/tb4" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen" frameborder="0" width="155" height="80" allowtransparency="true"></iframe></div> */ -}}
@@ -74,11 +72,8 @@
     {{ if $shareInAside }}
     {{ partial "share1.html" . }}
     {{ end }}
-
-  {{ if $showAside }}
   </aside>
   {{ end }}
-
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     <section class="h-entry ui segment" data-clarity-region="article">
       <header>
@@ -113,41 +108,44 @@
                 {{ with .Param "author.avatar" }}{{ with .Param "author.url" }}<a href="{{ . }}" class="p-author h-card" rel="author{{ with .Param "author.rel" }} {{ . }}{{ end }}">{{ end }}<img class="u-photo ui avatar image" src="{{ . }}" alt="avatar" />{{ with .Param "author.url" }}</a>{{ end }}{{ end }}
                 <address class="p-author h-card">{{ with .Param "author.url" }}<a href="{{ . }}" class="u-url p-name" rel="author{{ with .Param "author.rel" }} {{ . }}{{ end }}">{{ end }}{{ .Param "author.name" }}{{ with .Param "author.url" }}</a>{{ end }}</address>
               {{ end }}
-                &nbsp;| {{ if .Site.Params.Experimental.jsDate }}
-                {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat (.PublishDate.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} <abbr{{ with $.Site.Language.Params.tzAbbrTitle }} title="{{ printf "%s" . }}"{{ end }}>{{ $.Site.Language.Params.tzAbbr }}</abbr></time>{{ end }}
+              &nbsp;| {{ if .Site.Params.Experimental.jsDate }}
+                  <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
                 {{ else }}
                   {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Day }} 日，{{ .PublishDate.Year }} 年
+                    {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
                   {{ else if eq .Site.Language.Lang "es" }}
-                    {{ index .Site.Data.es.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ .PublishDate.Day }} de {{ index .Site.Data.es.Month (printf "%d" .PublishDate.Month) }} de {{ .PublishDate.Year }}
+                    {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
                   {{ else if eq .Site.Language.Lang "pt" }}
-                    {{ index .Site.Data.pt.Weekday (printf "%d" .PublishDate.Weekday) }}, {{ .PublishDate.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .PublishDate.Month) }} de {{ .PublishDate.Year }}
+                    {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
                   {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .PublishDate.Weekday) }} {{ .PublishDate.Day }} {{ index .Site.Data.fr.Month (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Year }}
+                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
                   {{ else }}
                     {{/* YourOnly.One: changed */}}
+                    {{- /* {{ .Date.Format "Monday, Jan 2, 2006" }} */ -}}
                     {{ if not .PublishDate.IsZero }}<time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">{{ time.Format $datetimeformat (.PublishDate.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} <abbr{{ with $.Site.Language.Params.tzAbbrTitle }} title="{{ printf "%s" . }}"{{ end }}>{{ $.Site.Language.Params.tzAbbr }}</abbr></time>{{ end }}
                   {{ end }}
                 {{ end }}
 
               | {{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}
 
-              {{/* YourOnly.One: replaced {{ if ne .Params.nolastmod true }} */}}
+              {{/* YourOnly.One: changed */}}
+              {{- /* {{ if ne .Params.nolastmod true }} */ -}}
               {{ if ne .PublishDate .Lastmod }}
-                | {{ i18n "updateAt" }}
+              | {{ i18n "updateAt" }}
                 {{ if .Site.Params.Experimental.jsDate }}
-                {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat (.Lastmod.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} <abbr{{ with $.Site.Language.Params.tzAbbrTitle }} title="{{ printf "%s" . }}"{{ end }}>{{ $.Site.Language.Params.tzAbbr }}</abbr></time>{{ end }}
+                  <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
                 {{ else }}
                   {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+                    {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
                   {{ else if eq .Site.Language.Lang "es" }}
                     {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
                   {{ else if eq .Site.Language.Lang "pt" }}
                     {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
                   {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Lastmod.Weekday) }} {{ .Lastmod.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }}
+                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
                   {{ else }}
                     {{/* YourOnly.One: changed */}}
+                    {{- /* {{ .Lastmod.Format "Monday, Jan 2, 2006" }} */ -}}
                     {{ if not .Lastmod.IsZero }}<time datetime="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-updated">{{ time.Format $datetimeformat (.Lastmod.UTC.Add (time.ParseDuration $.Site.Language.Params.tzOffset)) }} <abbr{{ with $.Site.Language.Params.tzAbbrTitle }} title="{{ printf "%s" . }}"{{ end }}>{{ $.Site.Language.Params.tzAbbr }}</abbr></time>{{ end }}
                   {{ end }}
                 {{ end }}
@@ -163,27 +161,27 @@
 
       <article class="e-content main">
         {{/* BGN: Badges */}}
-        {{ partial "badges.html" . }}
+          {{ partial "badges.html" . }}
         {{/* END: Badges */}}
 
         {{- /* YourOnly.One: changed
           {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-          <img class="u-featured cover" src="{{ .Params.Cover }}" />
+          <img class="cover" src="{{ .Params.Cover }}" />
           {{ end }}
         */ -}}
         {{ with and .Site.Params.showSummaryCoverInPost .Params.images }}
           <img class="u-featured cover" src="{{ index . 0 | absURL }}" />
         {{ end }}
 
-        {{- /* BGN: YourOnly.One: changed */ -}}
-          {{- /* .Content | emojify */ -}}
+        {{/* BGN: YourOnly.One: changed */}}
+          {{- /* {{ .Content | emojify }} */ -}}
 
           {{- $inserthere := `<div role="cover-image-attributions">` -}}
           {{- $insertcontent := partial "youronly.one-content-partof.html" . -}}
           {{- $joined := print $insertcontent $inserthere -}}
           {{- $content := replace .Content $inserthere $joined 1 -}}
           {{ $content | safeHTML }}
-        {{- /* END: YourOnly.One: changed */ -}}
+        {{/* END: YourOnly.One: changed */}}
 
         {{ with .Params.syndications }}
           {{ partial "syndications.html" . }}
@@ -206,7 +204,9 @@
 
     {{ if .Site.DisqusShortname }}
     <article class="ui segment post-disqus-area" data-html2canvas-ignore>
-      {{ template "_internal/disqus.html" . }}  {{/* YourOnly.One: Do not remove */}}
+      {{/* YourOnly.One: reverted to built-in */}}
+      {{- /* {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }} */ -}}
+      {{ template "_internal/disqus.html" . }}
     </article>
     {{ end }}
 
@@ -261,7 +261,9 @@
 {{ partial "highlight.html" . }}
 {{ end }}
 
-{{/* NOTE: html2canvas 1.4.1 as of 2022-10-06 */}}
+{{/* NOTE: html2canvas 1.4.1 as of 2022-12-13 */}}
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" integrity="sha256-6H5VB5QyLldKH9oMFUmjxw2uWpPZETQXpCkBaDjquMs=" crossorigin="anonymous" type="text/javascript"></script>
+{{- /* <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script> */ -}}
+
 <script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}
