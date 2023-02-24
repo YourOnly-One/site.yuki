@@ -113,3 +113,14 @@ figure {
   vertical-align: middle;
 }
 /* END: Yuki defaults */
+
+html body {
+  background-attachment: fixed;
+}
+
+html body div.flip-container div.flipper section.front,
+html body div.flip-container div.flipper section.back {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
