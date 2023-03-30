@@ -43,7 +43,7 @@ favicon_mstilecolor = "#2b5797"
   #stackoverflow = ""
   #codepen = ""
 
-  #favicon = "/favicon.ico"
+  #favicon = "favicon.ico"
 
   highlightjs = true
   highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"

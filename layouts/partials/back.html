@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <div class="ui relaxed grid dream-grid dream-back">
-  {{ $headless := .Site.GetPage "/about" }}
+  {{ $headless := .Site.GetPage "about" }}
   {{ $aboutPages := $headless.Resources.ByType "page" }}
   {{ range $aboutPages }}
   <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
