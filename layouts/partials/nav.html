@@ -26,19 +26,19 @@
   {{ end }}
   {{/* BGN: translation menu */}}
     <div class="item">
-      <a href="{{ .RelPermalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageflag }}</span></a>
+      <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span></a>
     </div>
     {{ if .IsTranslated -}}
       {{ range .Translations }}
         <div class="item">
-          <a href="{{ .RelPermalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageflag }}</span></a>
+          <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span></a>
         </div>
       {{ end }}
     {{ else }}
       {{ range .Site.Languages }}
         {{ if ne .Lang $.Site.Language.Lang }}
           <div class="item">
-            <span class="translation-none" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageflag }}</span></span>
+            <span class="translation-none" title="{{ .LanguageName }}"><span class="lang-flag-large">{{ $.Site.Params.languageFlag }}</span></span>
           </div>
         {{ end }}
       {{ end }}

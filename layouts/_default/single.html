@@ -37,15 +37,15 @@
 
     {{/* BGN: translation menu */}}
       <div id="translations_sidebar" class="ui segment toc txt_center">
-        <a href="{{ .RelPermalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageflag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
         {{ if .IsTranslated -}}
           {{ range .Translations }}
-            <span class="lang-separator">・</span> <a href="{{ .RelPermalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageflag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
+            <span class="lang-separator">・</span> <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
           {{ end }}
         {{ else }}
           {{ range .Site.Languages }}
             {{ if ne .Lang $.Site.Language.Lang }}
-              <span class="lang-separator">・</span> <span class="translation-none" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageflag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</span>
+              <span class="lang-separator">・</span> <span class="translation-none" title="{{ .LanguageName }}"><span class="lang-flag-large">{{ $.Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .LanguageName }})</span>
             {{ end }}
           {{ end }}
         {{ end }}
