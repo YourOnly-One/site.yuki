@@ -181,14 +181,14 @@ workspace = "off"
   # END: /love/ fill gaps content
 
   # BGN: /way/ fill gaps content
-    [[imports.mounts]]
-      source = "content/way/en-ph"
-      target = "content"
-      lang = "ja"
-    [[imports.mounts]]
-      source = "content/way/en-ph"
-      target = "content"
-      lang = "ko"
+    #[[imports.mounts]]
+    #  source = "content/way/en-ph"
+    #  target = "content"
+    #  lang = "ja"
+    #[[imports.mounts]]
+    #  source = "content/way/en-ph"
+    #  target = "content"
+    #  lang = "ko"
   # END: /way/ fill gaps content
 
   # BGN: /techmagus/ fill gaps content
