@@ -37,10 +37,10 @@
 
     {{/* BGN: translation menu */}}
       <div id="translations_sidebar" class="ui segment toc txt_center">
-        <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
+        <a href="{{ .Permalink }}" lang="{{ or (.Site.Language.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
         {{ if .IsTranslated -}}
           {{ range .Translations }}
-            <span class="lang-separator">・</span> <a href="{{ .Permalink }}" lang="{{ or (.Site.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
+            <span class="lang-separator">・</span> <a href="{{ .Permalink }}" lang="{{ or (.Site.Language.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span>&nbsp;&nbsp;({{ .Site.Language.LanguageName }})</a>
           {{ end }}
         {{ else }}
           {{ range .Site.Languages }}
