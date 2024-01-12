@@ -100,10 +100,6 @@
     <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-    {{ if .Site.GoogleAnalytics }}
-    {{ template "_internal/google_analytics_async.html" . }}
-    {{ end }}
-
     <!-- BGN: YourOnly.One Body-02-Bottom -->
       {{- if templates.Exists "partials/youronly.one-body-02-btm.html" -}}
         {{ partial "youronly.one-body-02-btm.html" . }}
