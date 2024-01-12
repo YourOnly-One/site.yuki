@@ -30,7 +30,7 @@
   </div>
 
   {{- /* YourOnly.One: we only need in-article positioning
-  {{ if and .Site.DisqusShortname .IsHome }}
+  {{ if and .Params.disqusShortname .IsHome }}
   <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
     <article class="ui segment">
       {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
