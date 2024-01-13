@@ -202,7 +202,7 @@
       <div id="webmentions"></div>
     </article>
 
-    {{ if .Params.disqusShortname }}
+    {{ if .Site.Config.Services.Disqus.Shortname }}
     <article class="ui segment post-disqus-area" data-html2canvas-ignore>
       {{/* YourOnly.One: reverted to built-in */}}
       {{- /* {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }} */ -}}
