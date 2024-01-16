@@ -8,7 +8,7 @@ favicon_mstilecolor = "#2b5797"
 ### BGN: Structured Data ###
   siteStartYear = 2021
   description = "The chronicles of ᜌᜓᜃᜒ (Yuki ・ 雪亮) / Yahuhanan Yukiya Sese Cuneta."
-  keywords = ["YOOki Chronicles", "YOOkiクロニクルズ", "YOOki 연대기", "YourOnlyOne", "YourOnly.One", "Yahuhanan Yukiya Sese Cuneta", "Yuki", "YoHan", "Yo-Han", "ᜌᜓᜃᜒ", "사요한", "謝雪矢（ゆきや）", "스노", "Seu-No", "SeuNo", "Snow", "Yohanan", "ᜌᜓᜑᜈᜈ᜔", "ᜌᜓᜑᜈᜈ᜕", "ᜌᜑᜓᜑᜈᜈ᜔", "ᜌᜑᜓᜑᜈᜈ᜕", "Chronicles"] # Can be overriden per page
+  keywords = ["YOOki Chronicles", "YOOkiクロニクルズ", "YOOki 연대기", "YourOnlyOne", "YourOnly.One", "Yahuhanan Yukiya Sese Cuneta", "Yuki", "YoHan", "Yo-Han",  "יהוחנן", "ᜌᜓᜃᜒ", "사요한", "謝雪矢（ゆきや）", "스노", "Seu-No", "SeuNo", "Snow", "Yohanan", "ᜌᜓᜑᜈᜈ᜔", "ᜌᜓᜑᜈᜈ᜕", "ᜌᜑᜓᜑᜈᜈ᜔", "ᜌᜑᜓᜑᜈᜈ᜕", "Chronicles"] # Can be overriden per page
   images = ["https://rsc.youronly.one/img/y/YOOki_Chronicles.webp", "https://rsc.youronly.one/img/y/Yuki_flag-300h.webp", "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"]
 ### END: Structured Data ###
 
