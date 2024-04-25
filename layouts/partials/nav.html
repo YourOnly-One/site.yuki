@@ -24,24 +24,27 @@
     <i class="large link search icon"></i>
   </a>
   {{ end }}
+
   {{/* BGN: translation menu */}}
-    <div class="item">
-      <a href="{{ .Permalink }}" lang="{{ or (.Site.Language.LanguageCode) (.Site.Language.Lang) }}" class="translation-active" title="{{ .Site.Language.LanguageName }}"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span></a>
-    </div>
-    {{ if .IsTranslated -}}
-      {{ range .Translations }}
-        <div class="item">
-          <a href="{{ .Permalink }}" lang="{{ or (.Site.Language.LanguageCode) (.Site.Language.Lang) }}" class="translation-alt" title="{{ .Site.Language.LanguageName }}" rel="alternate"><span class="lang-flag-large">{{ .Site.Params.languageFlag }}</span></a>
-        </div>
-      {{ end }}
-    {{ else }}
-      {{ range .Site.Languages }}
-        {{ if ne .Lang $.Site.Language.Lang }}
-          <div class="item">
-            <span class="translation-none" title="{{ .LanguageName }}"><span class="lang-flag-large">{{ $.Site.Params.languageFlag }}</span></span>
-          </div>
-        {{ end }}
-      {{ end }}
-    {{ end }}
+    {{- with .AllTranslations }}
+      <nav aria-label="Translations (top menu)" class="list-horizontal item">
+        <ol role="list">
+          {{- range . }}
+            {{- $languageCode := or .Language.LanguageCode .Language.Lang }}
+            {{- $languageName := or .Language.LanguageName .Language.LanguageCode .Language.Lang }}
+            {{- $languageIcon := .Site.Params.languageFlag }}
+            {{- /* SAMPLE / IDEAL
+              <li lang="{{ $languageCode }}" title="{{ $languageName }}">
+                <a class="" hreflang="{{ $languageCode }}" href="{{ .Permalink }}">
+                  <img class="icons" type="{{ .MediaType.Type }}" alt="{{ $languageName }}" loading="lazy" decoding="async" width="2.7%" height="2.7%" src="{{ $languageIcon }}">
+                  ({{ $languageName }})
+                </a>
+              </li>
+            */}}
+            <li lang="{{ $languageCode }}" title="{{ $languageName }}"><a class="lang-flag-large" hreflang="{{ $languageCode }}" href="{{ .Permalink }}">{{ $languageIcon }}</a></li>
+          {{- end }}
+        </ol>
+     </nav>
+    {{- end }}
   {{/* END: translation menu */}}
 </nav>
