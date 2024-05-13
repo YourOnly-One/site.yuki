@@ -6,11 +6,11 @@ _merge = "deep"
 [ja]
   title = "YOOkiクロニクルズ"
   [ja.params]
-    description = "Yahuhanan Yukiya Sese Cunetaの年代記 / ᜌᜓᜃᜒ (Yuki ・ 雪亮)."     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-    motto = "これが忘却の終わりではないなら、私は自分の人生がまさにこの日に終わるかのように毎日生きるでしょう。"
+    description = "謝雪矢の年代記。"     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+    motto = "もしこれが忘却の終わりでないなら、私は自分の人生がまさにこの日に終わるかのように毎日を生きるでしょう。"
 
 [ko]
   title = "YOOki 연대기"
   [ko.params]
-    description = "Yahuhanan Yukiya Sese Cuneta의 연대기 / ᜌᜓᜃᜒ (Yuki ・ 雪亮)."      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-    motto = "이것이 망각의 끝이 아니라면 내 인생이 바로 오늘 끝날 듯 매일 살 것이다."
+    description = "사요한의 연대기."      # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+    motto = "만약 이것이 망각의 끝이 아니라면, 나는 마치 내 인생이 바로 이 날을 끝내는 것처럼 매일 살 것입니다."
