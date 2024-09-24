@@ -5,7 +5,7 @@ lastmod = 2020-03-25T06:00:00+00:00
 weight = "1"
 +++
 
-**The YOOki Chronicles** is __[Yohan Yuki Xie](https://YourOnly.One)__'s return into casual and personal blogging. The name "YOOki" is a mash-up of the acronym of **YourOnly.One** and my nickname **<span lang="tl-Tglg">ᜌᜓᜃᜒ</span> (<span lang="ja-latn">Yuki</span><span lang="ja">・雪矢</span>)**.
+**The YOOki Chronicles** is __[Yohan Yukiya Sese-Cuneta](https://YourOnly.One)__'s return into casual and personal blogging. The name "YOOki" is a mash-up of the acronym of **YourOnly.One** and my nickname **<span lang="tl-Tglg">ᜌᜓᜃᜒ</span> (<span lang="ja-latn">Yuki</span><span lang="ja">・雪矢</span>)**.
 
 Interestingly, <q>according to Chinese legend, <q lang="zh">柳</q> (YOO) is an ancient Chinese surname. The ancestors of the surname were closely linked with the ancient sage-king named Yu Shun. In Korea, the <q lang="ko">유</q> (YU) lineage traces to the Xia, Han, and Joseon dynasties. Holders of the surname Yu or Yoo had a reputation for charity and diligence</q>.[^유]
 
